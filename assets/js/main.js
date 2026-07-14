@@ -3,52 +3,43 @@ $(function () {
   /* =================================
   ヘッダー
    ================================= */
-  $(function () {
-    const $btn = $('.site-header__menu-btn');
-    const $menu = $('.sp-menu');
-    const $overlay = $('.sp-menu__overlay');
-    const $body = $('body');
+$(function () {
+  const $body = $("body");
+  const $menuButton = $(".header__menu-btn");
+  const $closeButton = $(".header-menu__close");
+  const $menu = $(".header-menu");
+  const $menuLinks = $(".header-menu__link, .header-menu__button");
 
-    function openMenu() {
-      $btn.addClass('is-open').attr('aria-expanded', 'true');
-      $menu.addClass('is-open').attr('aria-hidden', 'false');
-      $overlay.addClass('is-open').attr('aria-hidden', 'false');
-      $body.addClass('is-sp-menu-open');
-    }
+  const openMenu = function () {
+    $menu.addClass("is-open").attr("aria-hidden", "false");
+    $menuButton.attr("aria-expanded", "true");
+    $body.addClass("is-menu-open");
+  };
 
-    function closeMenu() {
-      $btn.removeClass('is-open').attr('aria-expanded', 'false');
-      $menu.removeClass('is-open').attr('aria-hidden', 'true');
-      $overlay.removeClass('is-open').attr('aria-hidden', 'true');
-      $body.removeClass('is-sp-menu-open');
-    }
+  const closeMenu = function () {
+    $menu.removeClass("is-open").attr("aria-hidden", "true");
+    $menuButton.attr("aria-expanded", "false");
+    $body.removeClass("is-menu-open");
+  };
 
-    // ハンバーガーでトグル
-    $btn.on('click', function () {
-      if ($menu.hasClass('is-open')) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    // オーバーレイで閉じる
-    $overlay.on('click', function () {
-      closeMenu();
-    });
-
-    // メニュー内リンクを押したら閉じる
-    $menu.on('click', 'a', function () {
-      closeMenu();
-    });
-
-    // Escで閉じる
-    $(document).on('keydown', function (e) {
-      if (e.key === 'Escape' && $menu.hasClass('is-open')) {
-        closeMenu();
-      }
-    });
+  $menuButton.on("click", function () {
+    openMenu();
   });
+
+  $closeButton.on("click", function () {
+    closeMenu();
+  });
+
+  $menuLinks.on("click", function () {
+    closeMenu();
+  });
+
+  $(document).on("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+});
 
   /* =================================
   ページ内リンク　ヘッダーの高さ考慮
