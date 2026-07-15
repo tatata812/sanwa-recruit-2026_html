@@ -22,8 +22,9 @@
     overflow: hidden;
 
     @include tab {
-      height: calc(100svh - 64px);
-      min-height: 560px;
+      height: auto;
+          min-height: auto;
+
     }
   }
 
@@ -70,7 +71,8 @@
     pointer-events: none;
 
     @include tab {
-      width: calc(100% - 80px);
+      width: calc(100% - 100px);
+      top: 25%;
     }
   }
 
@@ -375,7 +377,7 @@
     margin: 0 auto;
 
     @include tab {
-      font-size: 16px;    
+      font-size: 16px;
       max-width: 191px;
 
     }
