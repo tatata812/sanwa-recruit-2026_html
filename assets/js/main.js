@@ -411,37 +411,28 @@ ease: "none",
 /* =================================
 ローディング画面
  ================================= */
-const loading = document.querySelector(".loading");
+gsap.from(".loading img", {
+  scale: .9,
+  opacity: 0,
+  duration: .8,
+  ease: "power2.out"
+});
 
-if (sessionStorage.getItem("loadingDisplayed")) {
+window.addEventListener("load", () => {
 
-  loading.remove();
+  const loading = document.querySelector(".loading");
 
-} else {
+  setTimeout(() => {
 
-  gsap.from(".loading img", {
-    scale: .9,
-    opacity: 0,
-    duration: .8,
-    ease: "power2.out"
-  });
+    gsap.to(loading, {
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      onComplete: () => {
+        loading.remove();
+      }
+    });
 
-  window.addEventListener("load", () => {
+  }, 500); // ← 最低0.5秒表示
 
-    setTimeout(() => {
-
-      gsap.to(loading, {
-        opacity: 0,
-        duration: .6,
-        ease: "power2.out",
-        onComplete: () => {
-          loading.remove();
-          sessionStorage.setItem("loadingDisplayed", "true");
-        }
-      });
-
-    }, 500);
-
-  });
-
-}
+});
