@@ -375,6 +375,7 @@
     text-align: left;
     max-width: 220px;
     margin: 0 auto;
+    white-space: nowrap;
 
     @include tab {
       font-size: 16px;

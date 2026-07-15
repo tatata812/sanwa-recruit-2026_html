@@ -337,6 +337,7 @@
   text-align: left;
   max-width: 220px;
   margin: 0 auto;
+  white-space: nowrap;
 }
 @media (max-width: 820px) {
   .top-concept__text {
