@@ -212,7 +212,7 @@
     line-height: 1.4;
 
     @include tab {
-      font-size: 20px;
+      font-size: 24px;
     }
   }
 
@@ -311,7 +311,7 @@
     width: 420px;
 
     @include tab {
-      width: min(100%, 320px);
+      width: 100%;
     }
   }
 
@@ -375,7 +375,9 @@
     margin: 0 auto;
 
     @include tab {
-      font-size: 16px;
+      font-size: 16px;    
+      max-width: 191px;
+
     }
   }
 }
