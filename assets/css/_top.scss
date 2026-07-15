@@ -278,7 +278,7 @@
   &__bg {
     position: relative;
     min-height: 760px;
-    background: url("/assets/img/top/top-concept-bg.jpg") center / cover no-repeat;
+    background: url("../img/top/top-concept-bg.jpg") center / cover no-repeat;
 
     @include tab {
       min-height: 580px;

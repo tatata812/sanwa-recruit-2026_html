@@ -248,7 +248,7 @@
 .top-concept__bg {
   position: relative;
   min-height: 760px;
-  background: url("/assets/img/top/top-concept-bg.jpg") center/cover no-repeat;
+  background: url("../img/top/top-concept-bg.jpg") center/cover no-repeat;
 }
 @media (max-width: 820px) {
   .top-concept__bg {

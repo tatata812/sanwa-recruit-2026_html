@@ -261,13 +261,13 @@ $(function () {
 
     prevArrow: `
     <button class="slick-prev" type="button">
-      <img src="/assets/img/common/arrow-prev.png" alt="" width="56" height="56">
+      <img src="assets/img/common/arrow-prev.png" alt="" width="56" height="56">
     </button>
   `,
 
     nextArrow: `
     <button class="slick-next" type="button">
-      <img src="/assets/img/common/arrow-next.png" alt="" width="56" height="56">
+      <img src="assets/img/common/arrow-next.png" alt="" width="56" height="56">
     </button>
   `,
 
