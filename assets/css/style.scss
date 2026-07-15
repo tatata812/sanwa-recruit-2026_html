@@ -556,6 +556,33 @@ footer
 }
 
 
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  opacity: 1;
+  visibility: visible;
+
+  &.is-hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .6s ease, visibility .6s;
+  }
+
+  img {
+    width: 180px;
+
+    @include tab {
+      width: 140px;
+    }
+  }
+}
+
+
 
 
 /* =====================================================

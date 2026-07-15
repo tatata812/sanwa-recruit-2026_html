@@ -407,3 +407,41 @@ ease: "none",
     }
   );
 });
+
+/* =================================
+ローディング画面
+ ================================= */
+const loading = document.querySelector(".loading");
+
+if (sessionStorage.getItem("loadingDisplayed")) {
+
+  loading.remove();
+
+} else {
+
+  gsap.from(".loading img", {
+    scale: .9,
+    opacity: 0,
+    duration: .8,
+    ease: "power2.out"
+  });
+
+  window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+      gsap.to(loading, {
+        opacity: 0,
+        duration: .6,
+        ease: "power2.out",
+        onComplete: () => {
+          loading.remove();
+          sessionStorage.setItem("loadingDisplayed", "true");
+        }
+      });
+
+    }, 500);
+
+  });
+
+}
