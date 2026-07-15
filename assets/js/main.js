@@ -284,10 +284,9 @@ $(function () {
   });
 
 })
-
 /* =================================
 セクション見出し
- ================================= */
+================================= */
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -302,154 +301,205 @@ gsap.utils.toArray(".section-heading").forEach((heading) => {
     scrollTrigger: {
       trigger: heading,
       start: "top 75%",
-      toggleActions: "play none none none"
+      once: true,
+      invalidateOnRefresh: true
     }
   });
 
-  tl.from(title, {
-    y: 30,
-    autoAlpha: 0,
-    duration: .8,
-    ease: "power3.out"
-  });
+  if (title) {
+    tl.from(title, {
+      y: 30,
+      autoAlpha: 0,
+      duration: .8,
+      ease: "power3.out"
+    });
+  }
 
-  tl.from(lineGray, {
-    scaleX: 0,
-    transformOrigin: "left center",
-    duration: .5,
-    ease: "power2.out"
-  }, "-=.35");
+  if (lineGray) {
+    tl.from(lineGray, {
+      scaleX: 0,
+      transformOrigin: "left center",
+      duration: .5,
+      ease: "power2.out"
+    }, "-=.35");
+  }
 
-  tl.from(lineBlue, {
-    scaleX: 0,
-    transformOrigin: "right center",
-    duration: .7,
-    ease: "power3.out"
-  }, "-=.2");
+  if (lineBlue) {
+    tl.from(lineBlue, {
+      scaleX: 0,
+      transformOrigin: "right center",
+      duration: .7,
+      ease: "power3.out"
+    }, "-=.2");
+  }
 
-  tl.from(lead, {
-    y: 24,
-    autoAlpha: 0,
-    duration: .8,
-    ease: "power2.out"
-  }, "-=.3");
+  if (lead) {
+    tl.from(lead, {
+      y: 24,
+      autoAlpha: 0,
+      duration: .8,
+      ease: "power2.out"
+    }, "-=.3");
+  }
 
 });
 
 /* =================================
 求める人材
- ================================= */
+================================= */
 
 gsap.utils.toArray(".top-concept__content").forEach((content) => {
+
   const title = content.querySelector(".top-concept__title");
   const line = content.querySelector(".top-concept__line");
-  const keywords = content.querySelectorAll(".top-concept__keywords span");
+  const keywords = content.querySelectorAll(
+    ".top-concept__keywords span"
+  );
   const text = content.querySelector(".top-concept__text");
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: content,
       start: "top 75%",
-      toggleActions: "play none none none"
+      once: true,
+      invalidateOnRefresh: true
     }
   });
 
-  tl.from(title, {
-    y: 30,
-    autoAlpha: 0,
-    duration: .8,
-    ease: "power3.out"
-  });
+  if (title) {
+    tl.from(title, {
+      y: 30,
+      autoAlpha: 0,
+      duration: .8,
+      ease: "power3.out"
+    });
+  }
 
-  tl.from(line, {
-    scaleX: 0,
-    transformOrigin: "left center",
-    duration: .7,
-    ease: "power2.out"
-  }, "-=.35");
+  if (line) {
+    tl.from(line, {
+      scaleX: 0,
+      transformOrigin: "left center",
+      duration: .7,
+      ease: "power2.out"
+    }, "-=.35");
+  }
 
-  tl.from(keywords, {
-    x: -30,
-    autoAlpha: 0,
-    duration: .8,
-    stagger: .18,
-    ease: "power3.out"
-  }, "-=.2");
+  if (keywords.length) {
+    tl.from(keywords, {
+      x: -30,
+      autoAlpha: 0,
+      duration: .8,
+      stagger: .18,
+      ease: "power3.out"
+    }, "-=.2");
+  }
 
-  tl.from(text, {
-    y: 24,
-    autoAlpha: 0,
-    duration: .8,
-    ease: "power2.out"
-  }, "-=.3");
+  if (text) {
+    tl.from(text, {
+      y: 24,
+      autoAlpha: 0,
+      duration: .8,
+      ease: "power2.out"
+    }, "-=.3");
+  }
+
 });
 
 /* =================================
 背景色を変更する
- ================================= */
-
+================================= */
 
 gsap.utils.toArray("section[data-bg]").forEach((section) => {
+
   gsap.fromTo(
     section,
     {
-      backgroundColor: "#ffffff"
+      backgroundColor: "#fff"
     },
     {
       backgroundColor: section.dataset.bg,
-duration: 1.5,
-ease: "none",
+      duration: 1.5,
+      ease: "none",
       scrollTrigger: {
         trigger: section,
         start: "top 70%",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
+        invalidateOnRefresh: true
       }
     }
   );
+
 });
 
 /* =================================
-ローディング画面
- ================================= */
-const loading = document.querySelector(".loading");
+ScrollTrigger再計算
+================================= */
 
+const refreshScrollTrigger = () => {
+
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 300);
+
+};
+
+window.addEventListener("load", refreshScrollTrigger);
+window.addEventListener("pageshow", refreshScrollTrigger);
+
+/* =================================
+ローディング画面
+================================= */
+
+const loading = document.querySelector(".loading");
 const referrer = document.referrer;
-const current = location.href;
+const currentUrl = location.href;
 
 const isInternal =
   referrer &&
   new URL(referrer).origin === location.origin;
 
-const isReload = referrer === current;
+const isReload = referrer === currentUrl;
 
-if (isInternal && !isReload) {
+if (loading) {
 
-  loading.remove();
+  if (isInternal && !isReload) {
 
-} else {
+    loading.remove();
+    refreshScrollTrigger();
 
-  gsap.from(".loading img", {
-    scale: .9,
-    opacity: 0,
-    duration: .8,
-    ease: "power2.out"
-  });
+  } else {
 
-  window.addEventListener("load", () => {
+    const loadingImage = loading.querySelector("img");
 
-    setTimeout(() => {
-
-      gsap.to(loading, {
-        opacity: 0,
-        duration: .6,
-        ease: "power2.out",
-        onComplete: () => {
-          loading.remove();
-        }
+    if (loadingImage) {
+      gsap.from(loadingImage, {
+        scale: .9,
+        autoAlpha: 0,
+        duration: .8,
+        ease: "power2.out"
       });
+    }
 
-    }, 500);
+    window.addEventListener("load", () => {
 
-  });
+      setTimeout(() => {
+
+        gsap.to(loading, {
+          autoAlpha: 0,
+          duration: .6,
+          ease: "power2.out",
+          onComplete: () => {
+
+            loading.remove();
+            ScrollTrigger.refresh();
+
+          }
+        });
+
+      }, 500);
+
+    });
+
+  }
 
 }
