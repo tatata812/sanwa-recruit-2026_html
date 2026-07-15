@@ -411,28 +411,45 @@ ease: "none",
 /* =================================
 ローディング画面
  ================================= */
-gsap.from(".loading img", {
-  scale: .9,
-  opacity: 0,
-  duration: .8,
-  ease: "power2.out"
-});
+const loading = document.querySelector(".loading");
 
-window.addEventListener("load", () => {
+const referrer = document.referrer;
+const current = location.href;
 
-  const loading = document.querySelector(".loading");
+const isInternal =
+  referrer &&
+  new URL(referrer).origin === location.origin;
 
-  setTimeout(() => {
+const isReload = referrer === current;
 
-    gsap.to(loading, {
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-      onComplete: () => {
-        loading.remove();
-      }
-    });
+if (isInternal && !isReload) {
 
-  }, 500); // ← 最低0.5秒表示
+  loading.remove();
 
-});
+} else {
+
+  gsap.from(".loading img", {
+    scale: .9,
+    opacity: 0,
+    duration: .8,
+    ease: "power2.out"
+  });
+
+  window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+      gsap.to(loading, {
+        opacity: 0,
+        duration: .6,
+        ease: "power2.out",
+        onComplete: () => {
+          loading.remove();
+        }
+      });
+
+    }, 500);
+
+  });
+
+}
