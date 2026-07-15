@@ -40,160 +40,464 @@
 
 
 <body class="wrap">
-<header class="header">
-  <div class="header__inner">
+  <header class="header">
+    <div class="header__inner">
 
-    <a class="header__logo" href="/">
-      <img class="header__logo-img" src="/assets/img/common/header-logo.png" alt="sanwa" width="264" height="64">
-    </a>
-
-    <nav class="header__nav" aria-label="メインナビゲーション">
-      <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <a class="header__nav-link" href="#business">
-            事業内容
-          </a>
-        </li>
-
-        <li class="header__nav-item">
-          <a class="header__nav-link" href="#data">
-            数字で見る三和
-          </a>
-        </li>
-
-        <li class="header__nav-item">
-          <a class="header__nav-link" href="#interview">
-            社員の声
-          </a>
-        </li>
-
-        <li class="header__nav-item">
-          <a class="header__nav-link" href="#flow">
-            選考フロー
-          </a>
-        </li>
-
-        <li class="header__nav-item">
-          <a class="header__nav-link" href="#faq">
-            よくある質問
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="header__links">
-      <a class="header__link header__link--requirements" href="/requirements/">
-        募集要項
+      <a class="header__logo" href="/">
+        <img class="header__logo-img" src="/assets/img/common/header-logo.png" alt="sanwa" width="264" height="64">
       </a>
 
-      <a class="header__link header__link--entry" href="/entry/">
-        エントリー
-      </a>
-    </div>
-
-    <button class="header__menu-btn" type="button" aria-controls="global-menu" aria-expanded="false">
-      <span class="header__menu-lines" aria-hidden="true">
-        <span class="header__menu-line"></span>
-        <span class="header__menu-line"></span>
-      </span>
-
-      <span class="header__menu-text">
-        menu
-      </span>
-    </button>
-
-  </div>
-
-  <div class="header-menu" id="global-menu" aria-hidden="true">
-    <div class="header-menu__inner">
-
-      <button class="header-menu__close" type="button" aria-label="メニューを閉じる">
-        <span class="header-menu__close-line"></span>
-        <span class="header-menu__close-line"></span>
-      </button>
-
-      <nav class="header-menu__nav" aria-label="ハンバーガーメニュー">
-        <ul class="header-menu__list">
-
-          <li class="header-menu__item">
-            <a class="header-menu__link" href="#business">
-              <span class="header-menu__number">01</span>
-              <span class="header-menu__text">事業内容</span>
+      <nav class="header__nav" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#business">
+              事業内容
             </a>
           </li>
 
-          <li class="header-menu__item">
-            <a class="header-menu__link" href="#data">
-              <span class="header-menu__number">02</span>
-              <span class="header-menu__text">数字で見る三和</span>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#data">
+              数字で見る三和
             </a>
           </li>
 
-          <li class="header-menu__item">
-            <a class="header-menu__link" href="#interview">
-              <span class="header-menu__number">03</span>
-              <span class="header-menu__text">社員の声</span>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#interview">
+              社員の声
             </a>
           </li>
 
-          <li class="header-menu__item">
-            <a class="header-menu__link" href="#flow">
-              <span class="header-menu__number">04</span>
-              <span class="header-menu__text">選考フロー</span>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#flow">
+              選考フロー
             </a>
           </li>
 
-          <li class="header-menu__item">
-            <a class="header-menu__link" href="#faq">
-              <span class="header-menu__number">05</span>
-              <span class="header-menu__text">よくある質問</span>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#faq">
+              よくある質問
             </a>
           </li>
-
         </ul>
       </nav>
 
-      <div class="header-menu__buttons">
-        <a class="header-menu__button header-menu__button--requirements" href="/requirements/">
+      <div class="header__links">
+        <a class="header__link header__link--requirements" href="/requirements/">
           募集要項
         </a>
 
-        <a class="header-menu__button header-menu__button--entry" href="/entry/">
+        <a class="header__link header__link--entry" href="/entry/">
           エントリー
         </a>
       </div>
 
-    </div>
-  </div>
-</header>
+      <button class="header__menu-btn" type="button" aria-controls="global-menu" aria-expanded="false">
+        <span class="header__menu-lines" aria-hidden="true">
+          <span class="header__menu-line"></span>
+          <span class="header__menu-line"></span>
+        </span>
 
-  <div class="main page-top" style="height: 800px; background-color: pink;">
+        <span class="header__menu-text">
+          menu
+        </span>
+      </button>
+
+    </div>
+
+    <div class="header-menu" id="global-menu" aria-hidden="true">
+      <div class="header-menu__inner">
+
+        <button class="header-menu__close" type="button" aria-label="メニューを閉じる">
+          <span class="header-menu__close-line"></span>
+          <span class="header-menu__close-line"></span>
+        </button>
+
+        <nav class="header-menu__nav" aria-label="ハンバーガーメニュー">
+          <ul class="header-menu__list">
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="#business">
+                <span class="header-menu__number">01</span>
+                <span class="header-menu__text">事業内容</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="#data">
+                <span class="header-menu__number">02</span>
+                <span class="header-menu__text">建材業界</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="#interview">
+                <span class="header-menu__number">03</span>
+                <span class="header-menu__text">創業140年</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="#flow">
+                <span class="header-menu__number">04</span>
+                <span class="header-menu__text">山口県シェアNO1</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="#faq">
+                <span class="header-menu__number">05</span>
+                <span class="header-menu__text">社員インタビュー</span>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="header-menu__buttons">
+          <a class="header-menu__button header-menu__button--requirements" href="/requirements/">
+            募集要項
+          </a>
+
+          <a class="header-menu__button header-menu__button--entry" href="/entry/">
+            エントリー
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="main page-top">
 
     <section class="top-fv">
+
+      <div class="top-fv__inner">
+
+        <div class="top-fv__slider top-fv-slider-js">
+
+          <div class="top-fv__slide">
+            <img class="top-fv__image pc" src="/assets/img/top/fv-img01.jpg" alt="">
+            <img class="top-fv__image sp" src="/assets/img/top/fv-img01-sp.jpg" alt="">
+          </div>
+
+          <div class="top-fv__slide">
+            <img class="top-fv__image pc" src="/assets/img/top/fv-img02.jpg" alt="">
+            <img class="top-fv__image sp" src="/assets/img/top/fv-img02-sp.jpg" alt="">
+          </div>
+
+          <div class="top-fv__slide">
+            <img class="top-fv__image pc" src="/assets/img/top/fv-img03.jpg" alt="">
+            <img class="top-fv__image sp" src="/assets/img/top/fv-img03-sp.jpg" alt="">
+          </div>
+
+          <div class="top-fv__slide">
+            <img class="top-fv__image pc" src="/assets/img/top/fv-img04.jpg" alt="">
+            <img class="top-fv__image sp" src="/assets/img/top/fv-img04-sp.jpg" alt="">
+          </div>
+
+        </div>
+
+        <div class="top-fv__copy">
+          <h1 class="top-fv__title">
+            <img class="top-fv__copy-image top-fv-copy-js" src="/assets/img/top/fv-copy.png"
+              alt="SINCE1880 より快適で安心な空間づくりに貢献する" width="680" height="260">
+          </h1>
+        </div>
+      </div>
+
+      <div class="entry-btn top-fv__entry-btn">
+        <a class="entry-btn__entry" href="/entry/">
+          <img src="/assets/img/top/entry02.png" alt="エントリー">
+        </a>
+        <a class="entry-btn__recruit" href="/recruit/">
+          <img src="/assets/img/top/recruit.png" alt="募集要項" width="200" height="200">
+        </a>
+      </div>
     </section>
 
-    <section class="top-concept">
+    <section class="top-concept" data-bg="#ffffff">
+
+      <div class="section-heading">
+        <h2 class="section-heading__title">
+          140年間一貫して住宅に携わり続けるということ
+        </h2>
+        <div class="section-heading__line">
+          <span class="section-heading__line-gray"></span>
+          <span class="section-heading__line-blue"></span>
+        </div>
+        <p class="section-heading__lead">
+          これはダミーテキストです。建材と言うキーワードをここのどこかに入れます。<br>
+          たとえば一人が必然を使えから、よほど他も倫敦にあるよというようあり不愉快ござい代りとするうとしので意味の道徳を離れておりのたて、
+          私に違えて、この誘惑院という心丈夫ず書物に、自由まし概念がとても好かけれどもいる。
+        </p>
+      </div>
+
+      <div class="top-concept__bg">
+
+        <div class="top-concept__inner">
+          <div class="top-concept__content">
+            <h2 class="top-concept__title">
+              求める人材
+            </h2>
+            <div class="top-concept__line"></div>
+            <p class="top-concept__keywords">
+              <span>「素直」</span>
+              <span>「元気」</span>
+            </p>
+            <p class="top-concept__text">
+              それだけあればそれでいい<br>
+              あとはなんとでもなるし<br>
+              なんとかする
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="top-person">
+
+    <section class="top-about"  data-bg="#e0e0e0">
+      <div class="section-heading">
+
+        <h2 class="section-heading__title">
+          三和を知る
+        </h2>
+
+        <div class="section-heading__line">
+          <span class="section-heading__line-gray"></span>
+          <span class="section-heading__line-blue"></span>
+        </div>
+
+        <p class="section-heading__lead">
+          これはダミーテキストです。たとえば一人が必然を使えから、<br>
+          よほど他も倫敦にあるよというようあり不愉快ござい代りとするうとしので意味の道徳を離れておりのたて、<br>
+          私に違えて、この誘惑院という心丈夫ず書物に、自由まし概念がとても好かけれどもいる。
+        </p>
+
+      </div>
+
+      <div class="top-about__slider top-about-slider-js">
+
+        <div class="top-about__slide">
+
+          <article class="about-card">
+
+            <div class="about-card__image">
+              <img src="/assets/img/top/about-img01.png" alt="" width="960" height="640">
+            </div>
+
+            <div class="about-card__label about-card__label--top">
+              <span class="about-card__label-text">WHY US?</span>
+              <span class="about-card__label-number">01</span>
+            </div>
+
+            <div class="about-card__body">
+
+              <h3 class="about-card__title">
+                事業内容
+              </h3>
+
+              <p class="about-card__text">
+                これはダミーテキストです。または職を釣ら他なくっですませでなは
+                考えたなて、それだけ移れず条件に、Englandの日光ほど射しのにし
+                について、お話しも今の限りばかりできるしもので与えないで脱却人
+                威張っからいたってご去就でのない。これはダミーテキストです。
+              </p>
+
+              <a class="about-card__link" href="/">
+                <span class="about-card__link-text">
+                  詳しく見る
+                </span>
+
+                <span class="about-card__link-icon">
+                  <img src="/assets/img/common/icon-arrow-right.png" alt="" width="56" height="56">
+                </span>
+              </a>
+
+            </div>
+
+            <div class="about-card__label about-card__label--bottom">
+              <span class="about-card__label-number">01</span>
+              <span class="about-card__label-text">WHY US?</span>
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="top-about__slide">
+
+          <article class="about-card">
+
+            <div class="about-card__image">
+              <img src="/assets/img/top/about-img02.png" alt="" width="960" height="640">
+            </div>
+
+            <div class="about-card__label about-card__label--top">
+              <span class="about-card__label-text">WHY US?</span>
+              <span class="about-card__label-number">02</span>
+            </div>
+
+            <div class="about-card__body">
+
+              <h3 class="about-card__title">
+                山口県シェアNo.1
+              </h3>
+
+              <p class="about-card__text">
+                これはダミーテキストです。または職を釣ら他なくっですませでなは
+                考えたなて、それだけ移れず条件に、Englandの日光ほど射しのにし
+                について、お話しも今の限りばかりできるしもので与えないで脱却人
+                威張っからいたってご去就でのない。これはダミーテキストです。
+              </p>
+
+              <a class="about-card__link" href="/">
+                <span class="about-card__link-text">
+                  詳しく見る
+                </span>
+
+                <span class="about-card__link-icon">
+                  <img src="/assets/img/common/icon-arrow-right.png" alt="" width="56" height="56">
+                </span>
+              </a>
+
+            </div>
+
+            <div class="about-card__label about-card__label--bottom">
+              <span class="about-card__label-number">02</span>
+              <span class="about-card__label-text">WHY US?</span>
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="top-about__slide">
+
+          <article class="about-card">
+
+            <div class="about-card__image">
+              <img src="/assets/img/top/about-img01.png" alt="" width="960" height="640">
+            </div>
+
+            <div class="about-card__label about-card__label--top">
+              <span class="about-card__label-text">WHY US?</span>
+              <span class="about-card__label-number">03</span>
+            </div>
+
+            <div class="about-card__body">
+
+              <h3 class="about-card__title">
+                地域密着
+              </h3>
+
+              <p class="about-card__text">
+                これはダミーテキストです。または職を釣ら他なくっですませでなは
+                考えたなて、それだけ移れず条件に、Englandの日光ほど射しのにし
+                について、お話しも今の限りばかりできるしもので与えないで脱却人
+                威張っからいたってご去就でのない。これはダミーテキストです。
+              </p>
+
+              <a class="about-card__link" href="/">
+                <span class="about-card__link-text">
+                  詳しく見る
+                </span>
+
+                <span class="about-card__link-icon">
+                  <img src="/assets/img/common/icon-arrow-right.png" alt="" width="56" height="56">
+                </span>
+              </a>
+
+            </div>
+
+            <div class="about-card__label about-card__label--bottom">
+              <span class="about-card__label-number">03</span>
+              <span class="about-card__label-text">WHY US?</span>
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="top-about__slide">
+
+          <article class="about-card">
+
+            <div class="about-card__image">
+              <img src="/assets/img/top/about-img02.png" alt="" width="960" height="640">
+            </div>
+
+            <div class="about-card__label about-card__label--top">
+              <span class="about-card__label-text">WHY US?</span>
+              <span class="about-card__label-number">04</span>
+            </div>
+
+            <div class="about-card__body">
+
+              <h3 class="about-card__title">
+                140年の歴史
+              </h3>
+
+              <p class="about-card__text">
+                これはダミーテキストです。または職を釣ら他なくっですませでなは
+                考えたなて、それだけ移れず条件に、Englandの日光ほど射しのにし
+                について、お話しも今の限りばかりできるしもので与えないで脱却人
+                威張っからいたってご去就でのない。これはダミーテキストです。
+              </p>
+
+              <a class="about-card__link" href="/">
+                <span class="about-card__link-text">
+                  詳しく見る
+                </span>
+
+                <span class="about-card__link-icon">
+                  <img src="/assets/img/common/icon-arrow-right.png" alt="" width="56" height="56">
+                </span>
+              </a>
+
+            </div>
+
+            <div class="about-card__label about-card__label--bottom">
+              <span class="about-card__label-number">04</span>
+              <span class="about-card__label-text">WHY US?</span>
+            </div>
+
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="top-about">
+    <section class="top-data" data-bg="#d6f0f180">
+
+            <div class="section-heading">
+
+        <h2 class="section-heading__title">
+          数字で見る三和
+        </h2>
+
+        <div class="section-heading__line">
+          <span class="section-heading__line-gray"></span>
+          <span class="section-heading__line-blue"></span>
+        </div>
+
+        <p class="section-heading__lead">
+          これはダミーテキストです。たとえば一人が必然を使えから、<br>
+          よほど他も倫敦にあるよというようあり不愉快ござい代りとするうとしので意味の道徳を離れておりのたて、<br>
+          私に違えて、この誘惑院という心丈夫ず書物に、自由まし概念がとても好かけれどもいる。
+        </p>
+
+      </div>
     </section>
 
-    <section class="top-data">
+    <section class="top-interview" data-bg="#ffffff">
     </section>
 
-    <section class="top-interview">
+    <section class="top-flow" data-bg="#ffffff">
     </section>
 
-    <section class="top-flow">
+    <section class="top-faq" data-bg="#ffffff">
     </section>
 
-    <section class="top-faq">
-    </section>
-
-    <section class="top-banner">
+    <section class="top-banner" data-bg="#ffffff">
     </section>
 
   </div>
@@ -224,6 +528,8 @@
       </p>
     </div>
   </footer>
+  <!-- slick -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>

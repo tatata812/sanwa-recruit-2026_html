@@ -1,54 +1,806 @@
 @use "config"as *;
 
 /* トップページスタイルシート */
+
+
 /* =================================
+メインビジュアル
+================================= */
 
- ================================= */
+.top-fv {
+  position: relative;
+  overflow: visible;
 
-.aaa {
+  @include tab {
+    margin: 0 0 60px;
+  }
 
-  &__ {}
+  &__inner {
+    position: relative;
+    height: min(760px, calc(100vh - 80px));
+    min-height: 600px;
+    overflow: hidden;
 
-  &__ {}
+    @include tab {
+      height: calc(100svh - 64px);
+      min-height: 560px;
+    }
+  }
 
-  &__ {}
+  &__slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
 
-  &__ {}
+  &__slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
-  &__ {}
+    &::after {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: rgba(0, 0, 0, .08);
+      content: "";
+      pointer-events: none;
+    }
+  }
 
-  &__ {}
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform-origin: center;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
 
-  &__ {}
+  &__copy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: min(580px, calc(100% - 80px));
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 
-  &__ {}
+    @include tab {
+      width: calc(100% - 80px);
+    }
+  }
 
-  &__ {}
+  &__title {
+    margin: 0;
+  }
 
-  &__ {}
+  &__copy-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, .45));
+  }
 
-  &__ {}
+  &__entry-btn {
+    position: absolute;
+    right: 6%;
+    bottom: -65px;
+    z-index: 10;
+    width: 200px;
+    aspect-ratio: 1;
 
-  &__ {}
+    @include tab {
+      right: 20px;
+      bottom: -45px;
+      width: 120px;
+    }
+  }
 
-  &__ {}
+  .slick-list,
+  .slick-track,
+  .slick-slide,
+  .slick-slide>div {
+    height: 100%;
+  }
 
-  &__ {}
+  .slick-list {
+    overflow: hidden;
+  }
 
-  &__ {}
+  .slick-track {
+    display: flex;
+  }
 
-  &__ {}
+  .slick-slide {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
 
-  &__ {}
+    >div {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
 
+  .pc {
+    display: block;
 
+    @include tab {
+      display: none;
+    }
+  }
+
+  .sp {
+    display: none;
+
+    @include tab {
+      display: block;
+    }
+  }
 }
 
 /* =================================
+エントリーボタン
+================================= */
 
+.entry-btn {
+  &__entry {
+    position: absolute;
+    inset: 0;
+    display: block;
+    transition: transform .3s;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.04);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__recruit {
+    position: absolute;
+    bottom: 0;
+    left: -14%;
+    z-index: 1;
+    display: block;
+    width: 44%;
+    transition: transform .3s;
+
+    @include tab {
+      bottom: -2%;
+      left: -10%;
+      width: 44%;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+
+  }
+}
+
+/* =================================
+セクション見出し
+================================= */
+
+.section-heading {
+  padding: 100px 16px;
+  text-align: center;
+
+  @include tab {
+    padding: 40px 16px;
+  }
+
+  &__title {
+    margin: 0;
+    color: #333;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    @include tab {
+      font-size: 20px;
+    }
+  }
+
+  &__line {
+    position: relative;
+    width: 200px;
+    height: 4px;
+    margin: 48px auto 56px;
+
+    @include tab {
+      width: 180px;
+      height: 4px;
+      margin: 32px auto 40px;
+    }
+  }
+
+  &__line-gray {
+    position: absolute;
+    inset: 0;
+    background: #8d8d8d;
+    border-radius: 999px;
+  }
+
+  &__line-blue {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 72%;
+    height: 100%;
+    background: #2f6fb8;
+    border-radius: 999px;
+  }
+
+  &__lead {
+    max-width: 920px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.5;
+    letter-spacing: .04em;
+    text-align: left;
+
+  }
+
+  // アニメーション
+  &__title,
+  &__lead {
+    will-change: transform, opacity;
+  }
+
+  &__line-gray,
+  &__line-blue {
+    transform-origin: left center;
+    will-change: transform;
+  }
+}
+
+/* =================================
+求める人材
+================================= */
+
+.top-concept {
+
+  &__bg {
+    position: relative;
+    min-height: 760px;
+    background: url("/assets/img/top/top-concept-bg.jpg") center / cover no-repeat;
+
+    @include tab {
+      min-height: 580px;
+      background-position: 54% center;
+    }
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, .08);
+      content: "";
+      pointer-events: none;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    min-height: inherit;
+    margin: 0 auto;
+    padding: 100px 40px;
+
+    @include tab {
+      padding: 64px 24px;
+    }
+  }
+
+  &__content {
+    width: 420px;
+
+    @include tab {
+      width: min(100%, 320px);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: #333;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: center;
+
+
+    @include tab {
+      font-size: 32px;
+    }
+  }
+
+  &__line {
+    width: 200px;
+    height: 4px;
+    margin: 24px auto 48px;
+    background: linear-gradient(to right,
+        #8c8c8c 0,
+        #8c8c8c 28%,
+        #2f6fb8 28%,
+        #2f6fb8 100%);
+    border-radius: 999px;
+
+    @include tab {
+      width: 180px;
+      height: 4px;
+      margin: 24px auto 40px;
+    }
+  }
+
+  &__keywords {
+    margin: 0 0 32px;
+    color: #222;
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+
+    @include tab {
+      margin: 0 0 32px;
+      font-size: 44px;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: #222;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+    max-width: 220px;
+    margin: 0 auto;
+
+    @include tab {
+      font-size: 16px;
+    }
+  }
+}
+
+/* =================================
+三和を知る
+================================= */
+
+.top-about {
+  padding: 0 0 120px;
+  overflow: hidden;
+  margin: 120px 0 0;
+
+  @include tab {
+    padding: 0 0 80px;
+    margin: 0;
+  }
+
+  &__slider {
+    margin: 0 -20px;
+
+    @include tab {
+      padding: 0 16px;
+    }
+  }
+
+  &__slide {
+    width: 960px;
+    padding: 0 60px;
+
+    @include tab {
+      width: calc(100vw - 48px);
+      padding: 0 16px;
+    }
+  }
+
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-track {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .slick-slide {
+    height: auto;
+
+    >div {
+      height: 100%;
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 56px 0 0;
+    padding: 0;
+    list-style: none;
+    bottom: -48px;
+
+    @include tab {
+      gap: 14px;
+      margin: 32px 0 0;
+    }
+
+    li {
+      margin: 0;
+    }
+
+    button {
+      display: block;
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #fff;
+      font-size: 0;
+      cursor: pointer;
+
+      @include tab {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .slick-active {
+      button {
+        background: #3476bd;
+      }
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    @include tab {
+      width: 42px;
+      height: 42px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .slick-prev {
+    left: calc(50% - 444px);
+
+    @include tab {
+      left: 8px;
+    }
+  }
+
+  .slick-next {
+    right: calc(50% - 444px);
+
+    @include tab {
+      right: 8px;
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 40px 0 0;
+    padding: 0;
+    list-style: none;
+
+    @include tab {
+      gap: 14px;
+      margin: 28px 0 0;
+    }
+
+    li {
+      margin: 0;
+      line-height: 1;
+    }
+
+    button {
+      display: block;
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .9);
+      font-size: 0;
+      cursor: pointer;
+      transition: background-color .3s, transform .3s;
+
+      @include tab {
+        width: 12px;
+        height: 12px;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .slick-active {
+      button {
+        background: #3476bd;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+/* =================================
+三和を知るカード
+================================= */
+
+.about-card {
+  position: relative;
+  height: 100%;
+  min-height: 640px;
+  overflow: hidden;
+  border-radius: 44px;
+  background: #fff;
+
+  @include tab {
+    min-height: 0;
+    border-radius: 24px;
+  }
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    border: 3px solid #3476bd;
+    border-radius: inherit;
+    content: "";
+    pointer-events: none;
+
+    @include tab {
+      border-width: 2px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+
+    @include tab {
+      position: relative;
+      width: 100%;
+      height: 260px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-height: 645px;
+    margin: 0 0 0 auto;
+    padding: 88px 56px 64px;
+    background: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(3px);
+
+    @include tab {
+      width: 100%;
+      min-height: 0;
+      margin: 0;
+      padding: 32px 24px 40px;
+      background: #fff;
+      backdrop-filter: none;
+    }
+  }
+
+  &__title {
+    margin: 0 0 44px;
+    color: #3476bd;
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    @include tab {
+      margin: 0 0 20px;
+      font-size: 26px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 120px;
+    font-size: 14px;
+    line-height: 2;
+
+    @include tab {
+      margin: 0 0 24px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    margin: auto auto 0 0;
+    padding: 8px 8px 8px 24px;
+    border-radius: 999px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity .3s;
+
+    @include tab {
+      width: 180px;
+
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: .8;
+
+        .about-card__link-icon {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+
+  &__link-text {
+    font-size: 16px;
+
+    @include tab {
+      font-size: 15px;
+    }
+  }
+
+  &__link-icon {
+    display: block;
+    width: 40px;
+    transition: transform .3s;
+
+    @include tab {
+      width: 44px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  &__label--top {
+    top: 0;
+    left: 0;
+    width: 152px;
+    height: 152px;
+    padding: 18px;
+    background: linear-gradient(135deg,
+        #3476bd 0%,
+        #3476bd 49.8%,
+        transparent 50.2%,
+        transparent 100%);
+
+    @include tab {
+      width: 102px;
+      height: 102px;
+      padding: 10px;
+    }
+  }
+
+  &__label--bottom {
+    right: 0;
+    bottom: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 162px;
+    height: 162px;
+    padding: 0 18px 16px 0;
+    background: linear-gradient(135deg,
+        transparent 0%,
+        transparent 49.8%,
+        #3476bd 50.2%,
+        #3476bd 100%);
+
+    @include tab {
+      width: 112px;
+      height: 112px;
+      padding: 0 10px 10px 0;
+    }
+  }
+
+  &__label-text {
+    font-size: 18px;
+    font-weight: 300;
+
+    @include tab {
+      font-size: 13px;
+    }
+  }
+
+  &__label-number {
+    margin: 6px 0 0;
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: .08em;
+
+    @include tab {
+      font-size: 26px;
+    }
+  }
+
+  &__label--bottom {
+    .about-card__label-number {
+      margin: 0 0 6px;
+    }
+  }
+}
+
+/* =================================
+数字で見る三和
  ================================= */
 
-.aaa {
+.top-data {
+  margin: 120px 0 0;
+
+  @include tab {
+    margin: 0;
+  }
 
   &__ {}
 

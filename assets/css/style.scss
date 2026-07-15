@@ -20,7 +20,6 @@ body {
     "Meiryo", "Yu Gothic", "YuGothic",
     sans-serif;
   font-family: "Noto Sans", sans-serif;
-
 }
 
 p {
@@ -124,13 +123,15 @@ header
     -webkit-backdrop-filter: blur(10px);
     border-radius: 0 0 20px 20px;
 
-    @include pc{
-    justify-content: space-between;
+    @include pc {
+      justify-content: space-between;
     }
 
     @include tab {
       justify-content: space-between;
       height: 64px;
+      border-radius: 0;
+
     }
   }
 
@@ -172,6 +173,7 @@ header
 
   &__nav {
     flex: 1;
+
     @include pc {
       display: none;
     }
@@ -212,8 +214,8 @@ header
   &__links {
     display: flex;
 
-    @include pc{
-    margin-left: auto;
+    @include pc {
+      margin-left: auto;
     }
 
     @include tab {
@@ -265,6 +267,8 @@ header
 
     @include tab {
       flex: 0 0 64px;
+      border-radius: 0;
+
     }
   }
 
@@ -413,8 +417,8 @@ header
       color: #0072bc;
     }
 
-    @include sp{
-    padding: 8px 8px;
+    @include sp {
+      padding: 8px 8px;
     }
   }
 
@@ -429,8 +433,8 @@ header
     font-weight: 500;
     line-height: 1.5;
 
-    @include sp{
-    font-size: 16px;
+    @include sp {
+      font-size: 16px;
     }
   }
 
