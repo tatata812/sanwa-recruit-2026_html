@@ -374,14 +374,14 @@
     font-size: 18px;
     line-height: 1.8;
     text-align: left;
-    max-width: 260px;
+    max-width: 202px;
     margin: 0 auto;
     white-space: nowrap;
 
     @include tab {
       font-size: 16px;
-      max-width: 220px;
-
+      max-width: 191px;
+  
     }
   }
 }

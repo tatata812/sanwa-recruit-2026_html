@@ -348,6 +348,10 @@ gsap.utils.toArray(".section-heading").forEach((heading) => {
 求める人材
 ================================= */
 
+/* =================================
+求める人材
+================================= */
+
 gsap.utils.toArray(".top-concept__content").forEach((content) => {
 
   const title = content.querySelector(".top-concept__title");
@@ -356,6 +360,11 @@ gsap.utils.toArray(".top-concept__content").forEach((content) => {
     ".top-concept__keywords span"
   );
   const text = content.querySelector(".top-concept__text");
+
+  gsap.set(keywords, {
+    x: -30,
+    autoAlpha: 0
+  });
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -385,9 +394,9 @@ gsap.utils.toArray(".top-concept__content").forEach((content) => {
   }
 
   if (keywords.length) {
-    tl.from(keywords, {
-      x: -30,
-      autoAlpha: 0,
+    tl.to(keywords, {
+      x: 0,
+      autoAlpha: 1,
       duration: .8,
       stagger: .18,
       ease: "power3.out"
