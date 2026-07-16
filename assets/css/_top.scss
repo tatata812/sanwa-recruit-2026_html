@@ -257,6 +257,14 @@
     letter-spacing: .04em;
     text-align: left;
 
+    &--center {
+    text-align: center;
+
+    @include tab{
+    text-align: left;
+    }
+    }
+
   }
 
   // アニメーション
@@ -802,14 +810,14 @@
  ================================= */
 
 .top-data {
-  padding: 100px 40px;
+  padding: 0 40px 100px;
   background: rgba(214, 240, 241, .5);
   overflow: hidden;
   margin: 120px 0 0;
 
 
   @include tab {
-    padding: 60px 20px;
+    padding: 0 20px 60px;
     margin: 0;
 
   }
@@ -1153,46 +1161,200 @@
 }
 
 /* =================================
-
+社員インタビュー
  ================================= */
 
-.aaa {
+.top-interview {
+  padding: 0 40px 140px;
+  overflow: hidden;
+  margin: 120px 0 0;
 
-  &__ {}
+  @include tab {
+    padding: 0 16px 100px;
+    margin: 0;
+  }
 
-  &__ {}
+  &__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
 
-  &__ {}
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 100px 60px;
 
-  &__ {}
+    @include tab {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 70px;
+    }
+  }
 
-  &__ {}
+  &__item {
+    min-width: 0;
+  }
 
-  &__ {}
+  &__link {
+    display: grid;
+    grid-template-columns: minmax(130px, 190px) minmax(220px, 260px);
+    align-items: end;
+    justify-content: center;
+    gap: 20px;
+    color: #333;
+    text-decoration: none;
 
-  &__ {}
+    @include tab {
+      grid-template-columns: minmax(90px, 35%) minmax(0, 1fr);
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
 
-  &__ {}
+    @media (hover: hover) {
+      &:hover {
+        .top-interview__image {
+          transform: translateY(-10px);
+        }
 
-  &__ {}
+        .top-interview__body {
+          transform: translate(-4px, -4px);
 
-  &__ {}
+          &::before {
+            transform: translate(12px, 12px);
+          }
+        }
 
-  &__ {}
+        .top-interview__arrow {
+          color: #3caed7;
+          background: #fff;
+          border-color: #3caed7;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
 
-  &__ {}
+  &__person {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 430px;
 
-  &__ {}
+    @include tab {
+      height: auto;
+    }
+  }
 
-  &__ {}
+  &__image {
+    display: block;
+    width: 100%;
+    max-height: 430px;
+    object-fit: contain;
+    object-position: center bottom;
+    transition: transform .4s ease;
 
-  &__ {}
+    @include tab {
+      max-height: 330px;
+    }
+  }
 
-  &__ {}
+&__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 365px;
+  padding: 28px 20px 18px;
+  background: #fff;
+  border: 1px solid #3488c2;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 10px 10px 0 rgba(52, 136, 194, .12);
+  transition: transform .4s ease, box-shadow .4s ease;
 
-  &__ {}
+  @include tab {
+    min-height: 300px;
+    padding: 20px 14px 14px;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 7px 7px 0 rgba(52, 136, 194, .12);
+  }
+}
 
+  &__title {
+    margin: 0 0 30px;
+    color: #31a9d5;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: .03em;
 
+    @include tab {
+      margin: 0 0 22px;
+      font-size: 19px;
+      line-height: 1.5;
+    }
+  }
+
+  &__profile {
+    margin: auto 0 20px;
+
+    @include tab {
+      margin: auto 0 16px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.55;
+
+      @include tab {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__name {
+    margin: 0;
+    line-height: 1;
+  }
+
+  &__initial {
+    color: #31a9d5;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: .03em;
+
+    @include tab {
+      font-size: 20px;
+    }
+  }
+
+  &__honorific {
+    margin: 0 0 0 3px;
+    font-size: 12px;
+
+    @include tab {
+      font-size: 11px;
+    }
+  }
+
+&__arrow {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 28px;
+  transition: transform .3s ease;
+
+  @include tab {
+    right: 8px;
+    bottom: 8px;
+    width: 24px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
 }
 
 /* =================================

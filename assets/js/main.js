@@ -282,14 +282,47 @@ $(function () {
       }
     }]
   });
-
 })
+// jQueryここまで
+
+/* =================================
+ローディング画面
+================================= */
+
+const loading = document.querySelector(".loading");
+
+if (loading) {
+  const removeLoading = () => {
+    loading.classList.add("is-hide");
+
+    setTimeout(() => {
+      loading.remove();
+
+      if (typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.refresh();
+      }
+    }, 600);
+  };
+
+  const fallbackTimer = setTimeout(removeLoading, 5000);
+
+  const hideLoading = () => {
+    clearTimeout(fallbackTimer);
+    setTimeout(removeLoading, 500);
+  };
+
+  if (document.readyState === "complete") {
+    hideLoading();
+  } else {
+    window.addEventListener("load", hideLoading, { once: true });
+  }
+}
+
+
+gsap.registerPlugin(ScrollTrigger);
 /* =================================
 セクション見出し
 ================================= */
-
-gsap.registerPlugin(ScrollTrigger);
-
 gsap.utils.toArray(".section-heading").forEach((heading) => {
 
   const title = heading.querySelector(".section-heading__title");
@@ -344,9 +377,6 @@ gsap.utils.toArray(".section-heading").forEach((heading) => {
 
 });
 
-/* =================================
-求める人材
-================================= */
 
 /* =================================
 求める人材
@@ -421,11 +451,9 @@ gsap.utils.toArray(".top-concept__content").forEach((content) => {
 gsap.utils.toArray("section[data-bg]").forEach((section) => {
 
   gsap.fromTo(
-    section,
-    {
+    section, {
       backgroundColor: "#fff"
-    },
-    {
+    }, {
       backgroundColor: section.dataset.bg,
       duration: 1.5,
       ease: "none",
@@ -454,66 +482,6 @@ const refreshScrollTrigger = () => {
 
 window.addEventListener("load", refreshScrollTrigger);
 window.addEventListener("pageshow", refreshScrollTrigger);
-
-/* =================================
-ローディング画面
-================================= */
-
-const loading = document.querySelector(".loading");
-const referrer = document.referrer;
-const currentUrl = location.href;
-
-const isInternal =
-  referrer &&
-  new URL(referrer).origin === location.origin;
-
-const isReload = referrer === currentUrl;
-
-if (loading) {
-
-  if (isInternal && !isReload) {
-
-    loading.remove();
-    refreshScrollTrigger();
-
-  } else {
-
-    const loadingImage = loading.querySelector("img");
-
-    if (loadingImage) {
-      gsap.from(loadingImage, {
-        scale: .9,
-        autoAlpha: 0,
-        duration: .8,
-        ease: "power2.out"
-      });
-    }
-
-    window.addEventListener("load", () => {
-
-      setTimeout(() => {
-
-        gsap.to(loading, {
-          autoAlpha: 0,
-          duration: .6,
-          ease: "power2.out",
-          onComplete: () => {
-
-            loading.remove();
-            ScrollTrigger.refresh();
-
-          }
-        });
-
-      }, 500);
-
-    });
-
-  }
-
-}
-
-
 
 
 /* =================================
