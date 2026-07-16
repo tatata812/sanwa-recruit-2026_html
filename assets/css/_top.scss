@@ -258,11 +258,11 @@
     text-align: left;
 
     &--center {
-    text-align: center;
+      text-align: center;
 
-    @include tab{
-    text-align: left;
-    }
+      @include tab {
+        text-align: left;
+      }
     }
 
   }
@@ -1197,7 +1197,7 @@
   &__link {
     display: grid;
     grid-template-columns: minmax(130px, 190px) minmax(220px, 260px);
-    align-items: end;
+    align-items: self-start;
     justify-content: center;
     gap: 20px;
     color: #333;
@@ -1258,25 +1258,25 @@
     }
   }
 
-&__body {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 365px;
-  padding: 28px 20px 18px;
-  background: #fff;
-  border: 1px solid #3488c2;
-  border-radius: 18px 18px 0 0;
-  box-shadow: 10px 10px 0 rgba(52, 136, 194, .12);
-  transition: transform .4s ease, box-shadow .4s ease;
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 365px;
+    padding: 28px 20px 18px;
+    background: #fff;
+    border: 1px solid #3488c2;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 10px 10px 0 rgba(52, 136, 194, .12);
+    transition: transform .4s ease, box-shadow .4s ease;
 
-  @include tab {
-    min-height: 300px;
-    padding: 20px 14px 14px;
-    border-radius: 14px 14px 0 0;
-    box-shadow: 7px 7px 0 rgba(52, 136, 194, .12);
+    @include tab {
+      min-height: 300px;
+      padding: 20px 14px 14px;
+      border-radius: 14px 14px 0 0;
+      box-shadow: 7px 7px 0 rgba(52, 136, 194, .12);
+    }
   }
-}
 
   &__title {
     margin: 0 0 30px;
@@ -1336,154 +1336,523 @@
     }
   }
 
-&__arrow {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 28px;
-  transition: transform .3s ease;
+  &__arrow {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 28px;
+    transition: transform .3s ease;
+
+    @include tab {
+      right: 8px;
+      bottom: 8px;
+      width: 24px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/* =================================
+フロー
+ ================================= */
+
+.top-flow {
+  padding: 0 16px 80px;
+  overflow: hidden;
+  background-color: #fff;
 
   @include tab {
-    right: 8px;
-    bottom: 8px;
-    width: 24px;
+    padding: 0 16px 60px;
   }
 
-  img {
+  &__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    margin: 0 0 60px;
+
+    @include tab {
+      margin: 0 0 36px;
+    }
+  }
+
+  &__lead {
+    margin: 0 0 100px;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+
+    @include tab {
+      margin: 0 0 60px;
+      font-size: 15px;
+      text-align: left;
+    }
+  }
+
+  &__list {
+    width: 760px;
+    margin: 0 auto;
+
+    @include tab {
+      width: 100%;
+      max-width: 560px;
+    }
+  }
+
+  &__item {
+    --line-scale: 0;
+
+    position: relative;
+    display: grid;
+    grid-template-columns: 74px 138px minmax(0, 1fr);
+    gap: 0 28px;
+    align-items: center;
+    min-height: 172px;
+
+    @include tab {
+      grid-template-columns: 58px 88px minmax(0, 1fr);
+      gap: 0 8px;
+      min-height: 120px;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 170px;
+        width: 2px;
+        height: calc(50% + 86px);
+        background: #78cceb;
+        content: "";
+        transform: scaleY(var(--line-scale));
+        transform-origin: top;
+
+        @include tab {
+          left: 105px;
+          height: calc(50% + 66px);
+        }
+      }
+    }
+  }
+
+  &__step {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__step-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    border: 1px solid #18a8e8;
+    border-radius: 50%;
+    background: #fff;
+    color: #18a8e8;
+    font-size: 16px;
+    font-weight: 700;
+
+    @include tab {
+      width: 54px;
+      height: 54px;
+      font-size: 13px;
+    }
+  }
+
+  &__step-arrow {
+    width: 0;
+    height: 0;
+    margin: 7px 0 0;
+    border-top: 14px solid #18a8e8;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+
+    @include tab {
+      margin: 5px 0 0;
+      border-top-width: 10px;
+      border-right-width: 6px;
+      border-left-width: 6px;
+    }
+  }
+
+  &__circle {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 138px;
+    height: 138px;
+    border-radius: 50%;
+    background: #8bd2ec;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+
+    @include tab {
+      width: 80px;
+      height: 80px;
+      font-size: 13px;
+    }
+
+    &--primary {
+      background: #27a9df;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    min-width: 0;
+
+    @include tab {
+      gap: 6px;
+    }
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    border: 1px solid #18a8e8;
+    border-radius: 50%;
+
+    @include tab {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include sp {
+      display: none;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+
+      @include tab {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+
+  &__text {
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0 0 4px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    @include tab {
+      margin: 0 0 2px;
+      font-size: 14px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    color: #777;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: nowrap;
+
+    @include tab {
+      font-size: 12px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  &__button-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0 0;
+
+    @include tab {
+      margin: 64px 0 0;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    padding: 6px 8px 6px 40px;
+    border-radius: 999px;
+    background: #17489b;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity .3s;
+
+    @include tab {
+      width: 180px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: .8;
+
+        .top-flow__button-icon {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+
+  &__button-text {
+    font-size: 16px;
+
+    @include tab {
+      font-size: 15px;
+    }
+  }
+
+  &__button-icon {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 46px;
+    transition: transform .3s;
+
+    @include tab {
+      width: 44px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 }
+
+/* =================================
+よくある質問
+ ================================= */
+
+.top-faq {
+  padding: 0 16px 120px;
+  overflow: hidden;
+  background: #eefaff;
+
+  @include tab {
+    padding: 0 16px 60px;
+  }
+
+  &__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+
+  &__list {
+    width: 800px;
+    margin: 0 auto;
+
+    @include tab {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    border-radius: 16px;
+    background: #fff;
+
+    @include tab {
+      border-radius: 12px;
+    }
+
+    &:not(:last-child) {
+      margin: 0 0 30px;
+
+      @include tab {
+        margin: 0 0 16px;
+      }
+    }
+  }
+
+  &__question {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 30px;
+    gap: 0 20px;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+    padding: 18px 30px;
+    border: 0;
+    background: transparent;
+    color: #06439b;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+
+    @include tab {
+      grid-template-columns: 28px minmax(0, 1fr) 22px;
+      gap: 0 12px;
+      min-height: 68px;
+      padding: 16px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        .top-faq__question-text {
+          opacity: .65;
+        }
+      }
+    }
+
+    &.is-open {
+      .top-faq__arrow {
+        transform: rotate(225deg);
+      }
+    }
+  }
+
+  &__question-mark {
+    color: #06439b;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+
+    @include tab {
+      font-size: 28px;
+    }
+  }
+
+  &__question-text {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    transition: opacity .3s;
+
+    @include tab {
+      font-size: 14px;
+    }
+  }
+
+  &__arrow {
+    justify-self: center;
+    width: 16px;
+    height: 16px;
+    border-right: 4px solid #555;
+    border-bottom: 4px solid #555;
+    transform: rotate(45deg);
+    transition: transform .3s;
+
+    @include tab {
+      width: 12px;
+      height: 12px;
+      border-width: 0 3px 3px 0;
+    }
+  }
+
+  &__answer {
+    display: none;
+  }
+
+  &__answer-inner {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 0 20px;
+    padding: 0 80px 30px 30px;
+
+    @include tab {
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 0 12px;
+      padding: 0 50px 20px 16px;
+    }
+  }
+
+  &__answer-mark {
+    color: #27a9df;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+
+    @include tab {
+      font-size: 27px;
+    }
+  }
+
+  &__answer-text {
+    margin: 0;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.8;
+
+    @include tab {
+      font-size: 14px;
+    }
+  }
 }
 
 /* =================================
-
+バナー
  ================================= */
 
-.aaa {
+.top-banner {
+  padding: 100px 20px;
+  background: #fff;
 
-  &__ {}
+  @include tab {
+    padding: 64px 20px;
+  }
 
-  &__ {}
+  &__inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
 
-  &__ {}
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 34px;
 
-  &__ {}
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
 
-  &__ {}
+  &__item {
+    display: block;
+    transition: opacity .3s, transform .3s;
 
-  &__ {}
+    @media (hover: hover) {
+      &:hover {
+        opacity: .8;
+        transform: translateY(-4px);
+      }
+    }
 
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-
-}
-
-/* =================================
-
- ================================= */
-
-.aaa {
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-
-}
-
-/* =================================
-
- ================================= */
-
-.aaa {
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 /* =================================

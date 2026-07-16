@@ -104,6 +104,8 @@ $(function () {
     });
   });
 
+  
+
   /* =================================
 メインビジュアル　スライダー
  ================================= */
@@ -282,6 +284,25 @@ $(function () {
       }
     }]
   });
+/* =================================
+よくある質問
+================================= */
+
+  $(".top-faq__question").on("click", function () {
+  $(this).toggleClass("is-open");
+  $(this).next(".top-faq__answer").slideToggle(300);
+});
+
+/* =================================
+トップに戻るボタン
+================================= */
+$(".footer__pagetop").on("click", function (e) {
+  e.preventDefault();
+
+  $("html, body").animate({
+    scrollTop: 0
+  }, 500);
+});
 })
 // jQueryここまで
 
@@ -592,14 +613,69 @@ gsap.utils.toArray(".count-up-js").forEach((number) => {
 アイコンのフロート
 ================================= */
 
-gsap.utils.toArray(".top-data-card__icon img").forEach((icon, index) => {
+gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(icon, {
-    y: index % 2 === 0 ? -4 : 4,
-    duration: 2 + index * .08,
-    ease: "sine.inOut",
-    repeat: -1,
-    yoyo: true
+const flowSection = document.querySelector(".top-flow");
+
+if (flowSection) {
+  const lead = flowSection.querySelector(".top-flow__lead");
+  const items = gsap.utils.toArray(".top-flow__item", flowSection);
+  const button = flowSection.querySelector(".top-flow__button-wrap");
+
+  const flowTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: flowSection,
+      start: "top 70%",
+      toggleActions: "play none none none"
+    }
   });
 
-});
+  flowTl.from(lead, {
+    y: 15,
+    autoAlpha: 0,
+    duration: .35,
+    ease: "power2.out"
+  });
+
+  items.forEach((item, index) => {
+    const step = item.querySelector(".top-flow__step");
+    const circle = item.querySelector(".top-flow__circle");
+    const content = item.querySelector(".top-flow__content");
+
+    flowTl.from(step, {
+      x: -15,
+      autoAlpha: 0,
+      duration: .25,
+      ease: "power2.out"
+    }, index === 0 ? "-=.1" : "-=.2");
+
+    flowTl.from(circle, {
+      scale: .8,
+      autoAlpha: 0,
+      duration: .3,
+      ease: "back.out(1.4)"
+    }, "-=.2");
+
+    flowTl.from(content, {
+      x: 15,
+      autoAlpha: 0,
+      duration: .3,
+      ease: "power2.out"
+    }, "-=.25");
+
+    if (index < items.length - 1) {
+      flowTl.to(item, {
+        "--line-scale": 1,
+        duration: .2,
+        ease: "power1.out"
+      }, "-=.1");
+    }
+  });
+
+  flowTl.from(button, {
+    y: 12,
+    autoAlpha: 0,
+    duration: .3,
+    ease: "power2.out"
+  }, "-=.1");
+}
