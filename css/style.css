@@ -197,6 +197,7 @@
 @media (max-width: 820px) {
   .section-heading__title {
     font-size: 24px;
+    white-space: nowrap;
   }
 }
 .section-heading__line {
