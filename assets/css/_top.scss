@@ -23,7 +23,7 @@
 
     @include tab {
       height: auto;
-          min-height: auto;
+      min-height: auto;
 
     }
   }
@@ -381,7 +381,7 @@
     @include tab {
       font-size: 16px;
       max-width: 191px;
-  
+
     }
   }
 }
@@ -802,47 +802,354 @@
  ================================= */
 
 .top-data {
+  padding: 100px 40px;
+  background: rgba(214, 240, 241, .5);
+  overflow: hidden;
   margin: 120px 0 0;
 
+
   @include tab {
+    padding: 60px 20px;
     margin: 0;
+
   }
 
-  &__ {}
+  &__inner {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+  }
 
-  &__ {}
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 34px;
 
-  &__ {}
+    @include tab {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
 
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
+  &__item {
+    min-width: 0;
+  }
+}
 
 
+.top-data-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  padding: 16px 24px 14px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(37, 119, 178, .04);
+  overflow: hidden;
+
+  @include tab {
+    min-height: 170px;
+    padding: 14px 16px 12px;
+    border-radius: 14px;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0 0 0 28px;
+    color: #378dcb;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    @include tab {
+      padding: 0 0 0 22px;
+      font-size: 17px;
+    }
+
+    &::before {
+      position: absolute;
+      top: .7em;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      background: #8a8a8a;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      content: "";
+
+      @include tab {
+        width: 9px;
+        height: 9px;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 24px;
+    min-height: 110px;
+
+    @include tab {
+      gap: 14px;
+      min-height: 95px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    flex: 0 0 120px;
+
+    @include tab {
+      width: 80px;
+      flex-basis: 80px;
+    }
+
+    img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 90px;
+      object-fit: contain;
+
+      @include tab {
+        max-height: 65px;
+      }
+    }
+
+    &--wide {
+      width: 140px;
+      flex-basis: 140px;
+
+      @include tab {
+        width: 90px;
+        flex-basis: 90px;
+      }
+
+      img {
+        max-width: 130px;
+
+        @include tab {
+          max-width: 90px;
+        }
+      }
+    }
+  }
+
+  &__value {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    color: #2989cf;
+    white-space: nowrap;
+
+    @include tab {
+      gap: 6px;
+    }
+  }
+
+  &__number {
+    display: inline-block;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: .85;
+    letter-spacing: -.05em;
+    font-variant-numeric: tabular-nums;
+
+    @include tab {
+      font-size: 62px;
+    }
+  }
+
+  &__unit {
+    padding: 0 0 7px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1;
+
+    @include tab {
+      padding: 0 0 4px;
+      font-size: 16px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #888;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: right;
+
+    @include tab {
+      font-size: 10px;
+    }
+  }
+
+
+  /* 売上高推移
+  ================================= */
+
+  &__sales {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  &__sales-row {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+
+    @include tab {
+      gap: 8px;
+    }
+  }
+
+  &__year {
+    color: #378dcb;
+    font-size: 20px;
+    line-height: 1;
+    white-space: nowrap;
+
+    @include tab {
+      font-size: 14px;
+    }
+  }
+
+  &__sales-value {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    color: #2989cf;
+
+    @include tab {
+      gap: 5px;
+    }
+  }
+
+  &__sales-number {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: .85;
+    letter-spacing: -.05em;
+    font-variant-numeric: tabular-nums;
+
+    @include tab {
+      font-size: 43px;
+    }
+  }
+
+  &__sales-unit {
+    padding: 0 0 5px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1;
+
+    @include tab {
+      padding: 0 0 3px;
+      font-size: 13px;
+    }
+  }
+
+
+  /* 男女比
+  ================================= */
+
+  &__ratio {
+    display: flex;
+    align-items: flex-end;
+    color: #2989cf;
+    white-space: nowrap;
+  }
+
+  &__ratio-group {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__ratio-number {
+    font-size: 76px;
+    font-weight: 600;
+    line-height: .85;
+    letter-spacing: -.05em;
+    font-variant-numeric: tabular-nums;
+
+    @include tab {
+      font-size: 53px;
+    }
+  }
+
+  &__ratio-label {
+    margin: 8px 7px 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+
+    @include tab {
+      margin: 7px 4px 0;
+      font-size: 10px;
+    }
+  }
+
+  &__ratio-separator {
+    padding: 0 1px 6px;
+    font-size: 55px;
+    font-weight: 600;
+    line-height: 1;
+
+    @include tab {
+      padding: 0 1px 4px;
+      font-size: 38px;
+    }
+  }
+
+  &--sales {
+    .top-data-card__body {
+      gap: 12px;
+
+      @include tab {
+        gap: 8px;
+      }
+    }
+
+    .top-data-card__icon {
+      width: 105px;
+      flex-basis: 105px;
+
+      @include tab {
+        width: 65px;
+        flex-basis: 65px;
+      }
+    }
+  }
+
+  &--ratio {
+    .top-data-card__body {
+      gap: 4px;
+    }
+
+    .top-data-card__icon {
+      width: 100px;
+      flex-basis: 100px;
+
+      @include tab {
+        width: 65px;
+        flex-basis: 65px;
+      }
+    }
+  }
 }
 
 /* =================================

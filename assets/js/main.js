@@ -512,3 +512,126 @@ if (loading) {
   }
 
 }
+
+
+
+
+/* =================================
+データカード
+================================= */
+
+gsap.utils.toArray(".top-data-card-js").forEach((card, index) => {
+
+  const title = card.querySelector(".top-data-card__title");
+  const icon = card.querySelector(".top-data-card__icon");
+  const value = card.querySelector(
+    ".top-data-card__value, .top-data-card__sales, .top-data-card__ratio"
+  );
+  const text = card.querySelector(".top-data-card__text");
+
+  const isLeft = index % 2 === 0;
+
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: card,
+      start: "top 85%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  timeline.from(card, {
+    x: isLeft ? -40 : 40,
+    y: 30,
+    autoAlpha: 0,
+    duration: .8,
+    ease: "power3.out"
+  });
+
+  timeline.from(title, {
+    x: -15,
+    autoAlpha: 0,
+    duration: .5,
+    ease: "power2.out"
+  }, "-=.5");
+
+  timeline.from(icon, {
+    scale: .7,
+    rotation: isLeft ? -6 : 6,
+    autoAlpha: 0,
+    duration: .7,
+    ease: "back.out(1.6)"
+  }, "-=.4");
+
+  timeline.from(value, {
+    y: 20,
+    autoAlpha: 0,
+    duration: .6,
+    ease: "power2.out"
+  }, "-=.5");
+
+  timeline.from(text, {
+    y: 10,
+    autoAlpha: 0,
+    duration: .4,
+    ease: "power2.out"
+  }, "-=.3");
+
+});
+
+
+/* =================================
+数値カウントアップ
+================================= */
+
+gsap.utils.toArray(".count-up-js").forEach((number) => {
+
+  const endValue = Number(number.dataset.value);
+  const decimal = Number(number.dataset.decimal || 0);
+
+  const counter = {
+    value: 0
+  };
+
+  ScrollTrigger.create({
+    trigger: number,
+    start: "top 90%",
+    once: true,
+
+    onEnter: () => {
+
+      gsap.to(counter, {
+        value: endValue,
+        duration: 1.6,
+        delay: .3,
+        ease: "power2.out",
+
+        onUpdate: () => {
+          number.textContent = counter.value.toFixed(decimal);
+        },
+
+        onComplete: () => {
+          number.textContent = endValue.toFixed(decimal);
+        }
+      });
+
+    }
+  });
+
+});
+
+
+/* =================================
+アイコンのフロート
+================================= */
+
+gsap.utils.toArray(".top-data-card__icon img").forEach((icon, index) => {
+
+  gsap.to(icon, {
+    y: index % 2 === 0 ? -4 : 4,
+    duration: 2 + index * .08,
+    ease: "sine.inOut",
+    repeat: -1,
+    yoyo: true
+  });
+
+});
