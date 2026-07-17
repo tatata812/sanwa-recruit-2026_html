@@ -146,53 +146,6 @@
   }
 }
 
-/* =================================
-エントリーボタン
-================================= */
-
-.entry-btn {
-  &__entry {
-    position: absolute;
-    inset: 0;
-    display: block;
-    transition: transform .3s;
-
-    @media (hover: hover) {
-      &:hover {
-        transform: scale(1.04);
-      }
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  &__recruit {
-    position: absolute;
-    bottom: 0;
-    left: -14%;
-    z-index: 1;
-    display: block;
-    width: 44%;
-    transition: transform .3s;
-
-    @include tab {
-      bottom: -2%;
-      left: -10%;
-      width: 44%;
-    }
-
-    @media (hover: hover) {
-      &:hover {
-        transform: scale(1.08);
-      }
-    }
-
-  }
-}
 
 /* =================================
 セクション見出し

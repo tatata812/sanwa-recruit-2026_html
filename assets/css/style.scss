@@ -612,6 +612,10 @@ footer
   }
 }
 
+/* =================================
+ローディング画面
+================================= */
+
 .loading {
   position: fixed;
   inset: 0;
@@ -635,6 +639,88 @@ footer
 
     @include tab {
       width: 140px;
+    }
+  }
+}
+
+/* =================================
+エントリーボタン
+================================= */
+
+.entry-btn {
+  position: relative;
+  width: 200px;
+  aspect-ratio: 1;
+
+  @include tab {
+    width: 120px;
+  }
+
+  &--floating {
+    position: fixed;
+    right: 6%;
+    bottom: 30px;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity .3s, transform .3s, visibility .3s;
+
+    @include tab {
+      right: 20px;
+      bottom: 20px;
+    }
+
+    &.is-show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__entry {
+    position: absolute;
+    inset: 0;
+    display: block;
+    transition: transform .3s;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.04);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__recruit {
+    position: absolute;
+    bottom: 0;
+    left: -14%;
+    z-index: 1;
+    display: block;
+    width: 44%;
+    transition: transform .3s;
+
+    @include tab {
+      bottom: -2%;
+      left: -10%;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
   }
 }

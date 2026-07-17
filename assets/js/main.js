@@ -303,8 +303,78 @@ $(".footer__pagetop").on("click", function (e) {
     scrollTop: 0
   }, 500);
 });
+
+
+$(function () {
+  const $window = $(window);
+  const $button = $(".entry-btn--floating");
+  const $footer = $(".footer");
+
+  if (!$button.length) return;
+
+  const fixedBottom = 30;      // 画面下余白
+  const footerOverlap = 60;    // フッターへ60px重ねる
+  const showPosition = 30;    // 100pxスクロールで表示
+
+  function floatingEntry() {
+    const scrollTop = $window.scrollTop();
+    const windowHeight = $window.height();
+
+    // フェードイン
+    $button.toggleClass("is-show", scrollTop > showPosition);
+
+    // フッター位置
+    const footerTop = $footer.offset().top;
+    const buttonHeight = $button.outerHeight();
+
+    // ボタン下端の現在位置
+    const buttonBottom = scrollTop + windowHeight - fixedBottom;
+
+    if (buttonBottom > footerTop + footerOverlap) {
+
+      // フッター位置で停止
+      $button.css({
+        position: "absolute",
+        top: footerTop - buttonHeight + footerOverlap,
+        bottom: "auto"
+      });
+
+    } else {
+
+      // 通常は追従
+      $button.css({
+        position: "fixed",
+        top: "auto",
+        bottom: fixedBottom
+      });
+
+    }
+  }
+
+  $window.on("scroll resize", floatingEntry);
+  floatingEntry();
+});
+
+
+
 })
 // jQueryここまで
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* =================================
 ローディング画面
