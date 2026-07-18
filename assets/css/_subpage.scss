@@ -32,89 +32,724 @@
 }
 
 /* =================================
-
+三和を知る下層共通
  ================================= */
+// メインビジュアル
 
-.aaa {
+.about-mv {
+  position: relative;
+  height: 680px;
+  background: url("../img/subpage/business-mv.jpg") center center / cover no-repeat;
 
-  &__ {}
+  &--industry {
+    background: url("../img/subpage/industry-mv.jpg") center center / cover no-repeat;
+  }
 
-  &__ {}
+  &--history {
+    background: url("../img/subpage/history-mv.jpg") center center / cover no-repeat;
+  }
 
-  &__ {}
+  &--strength {
+    background: url("../img/subpage/strength-mv.jpg") center center / cover no-repeat;
+  }
 
-  &__ {}
+  @include tab {
+    height: 420px;
+    background-position: center bottom;
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
 
-  &__ {}
+  @include sp {
+    height: 220px;
+  }
 
-  &__ {}
+  @media screen and (max-width: 440px) {
+    height: 180px;
 
-  &__ {}
+  }
 
-  &__ {}
+  &__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    min-height: 390px;
+    padding: 140px 7% 70px 8%;
+    border-radius: 0 0 0 150px;
+    background: linear-gradient(to bottom, rgba(224, 234, 244, .92) 0%, rgba(255, 255, 255, .9) 100%);
 
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
+    @include tab {
+      width: 50%;
+      min-height: auto;
+      padding: 32px 24px 48px 56px;
+      border-radius: 0 0 0 80px;
+    }
 
 
+    @include sp {
+      width: calc(100% - 150px);
+      min-height: auto;
+      padding: 16px 24px 16px 56px;
+      border-radius: 0 0 0 80px;
+      border-radius: 0 0 0 40px;
+
+    }
+  }
+
+  &__title {
+    margin: 0 0 42px;
+    color: #222;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: .04em;
+
+
+    @include tab {
+      margin: 0 0 24px;
+      font-size: 28px;
+    }
+
+    @include sp {
+      margin: 0 0 8px;
+      font-size: 20px;
+      font-size: 20px;
+
+    }
+  }
+
+  &__line {
+    position: relative;
+    display: block;
+    width: 225px;
+    height: 5px;
+    margin: 0 0 26px;
+    background-color: #1e73b9;
+
+    @include tab {
+      width: 160px;
+      height: 4px;
+      margin: 0 0 20px;
+    }
+
+    @include sp {
+      width: 120px;
+      margin: 0 0 8px;
+
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 62px;
+      height: 100%;
+      background-color: #858585;
+      content: "";
+
+      @include tab {
+        width: 44px;
+      }
+    }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+    @include tab {
+      gap: 16px;
+    }
+  }
+
+  &__en {
+    color: #2875b6;
+    font-size: 58px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: .06em;
+
+    @include tab {
+      font-size: 36px;
+    }
+
+    @include sp {
+      font-size: 20px;
+      width: 50px;
+    }
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 114px;
+    aspect-ratio: 1;
+    border: 1px solid #5791be;
+    color: #2875b6;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: .08em;
+
+    @include tab {
+      width: 72px;
+      font-size: 34px;
+    }
+
+    @include sp {
+      width: 40px;
+      font-size: 20px;
+    }
+  }
+}
+
+
+.about-content {
+  padding: 100px 0 110px;
+  overflow: hidden;
+
+  @include tab {
+    padding: 60px 0 70px;
+  }
+
+  &__inner {
+    width: min(1290px, calc(100% - 80px));
+    margin: 0 auto;
+
+    @include tab {
+      width: calc(100% - 40px);
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 500px minmax(0, 1fr);
+    align-items: start;
+    gap: 80px;
+
+    @include pc {
+      gap: 40px;
+      grid-template-columns: 400px minmax(0, 1fr);
+
+    }
+
+    @include tab {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 100px;
+
+    @include tab {
+      margin: 0 0 45px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: #333;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    @include tab {
+      font-size: 22px;
+    }
+  }
+
+  &__line {
+    display: flex;
+    width: 260px;
+    height: 5px;
+    margin: 48px 0 0;
+
+    @include tab {
+      width: 180px;
+      height: 4px;
+      margin: 16px 0 0;
+    }
+  }
+
+  &__line-gray {
+    width: 100px;
+    background: #8d8d8d;
+  }
+
+  &__line-blue {
+    flex: 1;
+    background: #367cc0;
+  }
+
+  &__text {
+    p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 2.15;
+
+      @include tab {
+        font-size: 15px;
+        line-height: 2;
+      }
+    }
+
+    span {
+      color: $main;
+    }
+  }
+
+
+  &__image {
+    margin: 0;
+    overflow: hidden;
+    flex: 1;
+
+    @include pc {}
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.about-share {
+  position: relative;
+  padding: 100px 0;
+
+  @include tab {
+    padding: 70px 0;
+  }
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    transform: translateY(-50%);
+  }
+
+  &__inner {
+    position: relative;
+    width: min(1290px, calc(100% - 80px));
+    height: 0;
+    margin: 0 auto;
+
+    @include tab {
+      width: calc(100% - 40px);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
 }
 
 /* =================================
-
+インタビュー
  ================================= */
 
-.aaa {
+.interview {
+  background: #edf8fd;
 
-  &__ {}
+  &__mv-bg {
+    background: url("../img/subpage/interview-mv-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
 
-  &__ {}
+  }
 
-  &__ {}
+  &__pager {
+    padding: 80px 16px;
+    text-align: center;
+  }
 
-  &__ {}
+}
 
-  &__ {}
+.interview-mv {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 140px;
 
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
+  @include pc {
+    padding: 0 0 40px;
+  }
 
 
+
+  @include tab {
+    padding: 0 0 12px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+    align-items: center;
+    gap: 60px;
+    padding: 0 0 0 16px;
+
+    @include pc {
+      gap: 40px;
+    }
+
+    @include tab {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 0;
+    }
+  }
+
+  &__content {
+    justify-self: end;
+    width: min(520px, calc(100% - 40px));
+
+
+
+    @include tab {
+      order: 2;
+      justify-self: auto;
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  &__catch {
+    margin: 100px 0 50px;
+    color: #2e81c4;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: .04em;
+    text-align: center;
+
+    @include pc {
+      margin: 100px 0 50px;
+      font-size: 32px;
+
+    }
+
+    @include tab {
+      margin: 0 0 30px;
+      font-size: 38px;
+    }
+
+    @include sp {
+      margin: 0 0 30px;
+      font-size: 24px;
+    }
+  }
+
+  &__profile {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #edf8fd;
+
+    @include pc {
+      max-width: 400px;
+    }
+
+    @include tab {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    @include sp {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  &__illustration {
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+    width: 28%;
+    transform: translateX(-50%);
+
+    @include pc {
+      left: 34%;
+    }
+
+    @include tab {
+      bottom: 4%;
+      left: 37%;
+      width: 30%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    top: 54%;
+    right: 0;
+    transform: translateY(-50%);
+
+    @include tab {
+      top: 55%;
+      right: 2%;
+    }
+
+    @include sp {
+      top: 55%;
+      right: -4%;
+    }
+
+    p {
+      margin: 0;
+      color: #333;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: .03em;
+
+      @include tab {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__name {
+    display: flex;
+    align-items: baseline;
+    margin: 46px 0 0 !important;
+    color: #25a7e0 !important;
+    line-height: 1 !important;
+
+    @include tab {
+      margin: 24px 0 0 !important;
+    }
+
+    strong {
+      font-size: 36px;
+      font-weight: 500;
+      letter-spacing: .02em;
+
+      @include tab {
+        font-size: 24px;
+      }
+    }
+
+    span {
+      margin-left: 5px;
+      color: #333;
+      font-size: 27px;
+
+      @include tab {
+        font-size: 17px;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0 0 0 120px;
+
+    @include tab {
+      order: 1;
+      border-radius: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.interview-content {
+  padding: 40px 20px 120px;
+  background: #edf8fd;
+
+  @include tab {
+    padding: 60px 20px 80px;
+  }
+
+  &__inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  &__intro {
+    margin: 0 0 88px;
+
+    @include tab {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__heading,
+  &__label {
+    position: relative;
+    padding: 0 0 16px;
+    color: #2875c4;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: .04em;
+
+    @include tab {
+      padding: 0 0 18px;
+      font-size: 17px;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 44px;
+      height: 4px;
+      background: #2875c4;
+      content: "";
+
+      @include tab {
+        width: 36px;
+        height: 4px;
+      }
+    }
+  }
+
+  &__lead {
+    margin: 32px 0 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.55;
+    letter-spacing: .03em;
+
+    @include tab {
+      margin: 26px 0 0;
+      font-size: 23px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 86px;
+
+    @include tab {
+      gap: 60px;
+    }
+  }
+
+  &__label {
+    margin: 0;
+  }
+
+  &__title {
+    margin: 30px 0 32px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.55;
+    letter-spacing: .03em;
+
+    @include tab {
+      margin: 24px 0;
+      font-size: 20px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    line-height: 1.9;
+    letter-spacing: .02em;
+
+    @include tab {
+      line-height: 1.8;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.interview-schedule {
+
+  background: url("../img/subpage/interview-schedule-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  padding: 120px 20px;
+
+  @include tab {
+    padding: 80px 20px;
+  }
+
+  &__inner {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  &__table {
+    width: 100%;
+    border: 1px solid #b6b6b6;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    th,
+    td {
+      border: 1px solid #b6b6b6;
+      padding: 12px;
+      font-weight: 400;
+      text-align: left;
+      vertical-align: middle;
+
+      @include tab {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
+
+    th {
+      width: 250px;
+      color: #fff;
+      background: #2d79c8;
+
+      @include tab {
+        width: 120px;
+      }
+    }
+
+    td {
+      background: #effaff;
+    }
+  }
 }
 
 /* =================================

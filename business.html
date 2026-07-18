@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="email=no,telephone=no,address=no">
+  <title>事業内容</title>
+  <meta name="description" content="<?php echo $des; ?>">
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:description" content="<?php echo $des; ?>">
+  <meta property="og:site_name"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/fb.jpg">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta name="twitter:description" content="<?php echo $des; ?>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;800&family=Noto+Sans:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="assets/css/html5reset-1.6.1.css">
+  <link rel="stylesheet" href="assets/css/style.css?20260121">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+
+
+<body class="wrap">
+  <header class="header">
+    <div class="header__inner">
+
+      <a class="header__logo" href="index.html">
+        <img class="header__logo-img" src="assets/img/common/header-logo.png" alt="sanwa" width="264" height="64">
+      </a>
+
+      <nav class="header__nav" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-about">
+              事業内容
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-data">
+              数字で見る三和
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-interview">
+              社員の声
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-flow">
+              選考フロー
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-faq">
+              よくある質問
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__links">
+        <a class="header__link header__link--requirements" href="/requirements/">
+          募集要項
+        </a>
+
+        <a class="header__link header__link--entry" href="/entry/">
+          エントリー
+        </a>
+      </div>
+
+      <button class="header__menu-btn" type="button" aria-controls="global-menu" aria-expanded="false">
+        <span class="header__menu-lines" aria-hidden="true">
+          <span class="header__menu-line"></span>
+          <span class="header__menu-line"></span>
+        </span>
+
+        <span class="header__menu-text">
+          menu
+        </span>
+      </button>
+
+    </div>
+
+    <div class="header-menu" id="global-menu" aria-hidden="true">
+      <div class="header-menu__inner">
+
+        <button class="header-menu__close" type="button" aria-label="メニューを閉じる">
+          <span class="header-menu__close-line"></span>
+          <span class="header-menu__close-line"></span>
+        </button>
+
+        <nav class="header-menu__nav" aria-label="ハンバーガーメニュー">
+          <ul class="header-menu__list">
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="business.html">
+                <span class="header-menu__number">01</span>
+                <span class="header-menu__text">事業内容</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="">
+                <span class="header-menu__number">02</span>
+                <span class="header-menu__text">山口県シェアNO1</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="">
+                <span class="header-menu__number">03</span>
+                <span class="header-menu__text">地域密着</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="">
+                <span class="header-menu__number">04</span>
+                <span class="header-menu__text">140年の歴史</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-data">
+                <span class="header-menu__text">数字で見る三和</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-interview">
+                <span class="header-menu__text">社員インタビュー</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-flow">
+                <span class="header-menu__text">選考フロー</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-faq">
+                <span class="header-menu__text">よくある質問</span>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="header-menu__buttons">
+          <a class="header-menu__button header-menu__button--requirements" href="/requirements/">
+            募集要項
+          </a>
+          <a class="header-menu__button header-menu__button--entry" href="/entry/">
+            エントリー
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="main about">
+
+    <section class="about-mv">
+      <div class="about-mv__content">
+        <h1 class="about-mv__title">三和を知る</h1>
+        <span class="about-mv__line"></span>
+        <div class="about-mv__heading">
+          <span class="about-mv__en">WHY US?</span>
+          <span class="about-mv__number">01</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-content">
+      <div class="about-content__inner">
+        <div class="about-content__body">
+          <div class="about-content__left">
+            <div class="about-content__heading">
+              <h2 class="about-content__title">事業内容</h2>
+              <div class="about-content__line"><span class="about-content__line-gray"></span><span
+                  class="about-content__line-blue"></span></div>
+            </div>
+            <div class="about-content__text">
+              <p>株式会社
+                三和は、山口県に本社を構える<span>建材業者</span>です。これはダミーテキストです。建材についての説明が入ります。たとえば一人が必然を使えから、よほど他も倫敦にあるよというようあり不愉快ござい代りとするうとの意味の道徳を離れておりのたて、私に違えて、この誘惑院というい丈ます書物に、自由まし概念がとても好かけれどもいる。
+              </p>
+            </div>
+          </div>
+          <figure class="about-content__image"><img src="assets/img/subpage/business-content.jpg" alt=""></figure>
+        </div>
+      </div>
+      <section class="about-share">
+        <div class="about-share__line"></div>
+
+        <div class="about-share__inner">
+          <a class="btn-style__link about-share__btn" href="industry.html">
+            <span class="btn-style__link-text">建材業界とは</span>
+            <span class="btn-style__link-icon">
+              <img src="assets/img/common/icon-arrow-right.png" alt="" width="56" height="56">
+            </span>
+          </a>
+        </div>
+      </section>
+    </section>
+
+
+  </div>
+  <!--main end-->
+
+
+
+
+
+
+
+  <footer class="footer">
+
+    <div class="footer__body">
+
+      <a href="/" class="footer__logo">
+        <img src="assets/img/common/logo.png" alt="株式会社三和">
+      </a>
+
+      <address class="footer__address">
+        株式会社三和　〒754-0075 山口県山口市小郡中央通1丁目15号<br>
+        TEL 083-973-2829　/　FAX 083-973-5321
+      </address>
+
+      <small class="footer__copyright">
+        &copy; 2026 Sanwa Co.,LTD.
+      </small>
+
+    </div>
+
+    <a href="#" class="footer__pagetop">
+      <span class="footer__pagetop-text">Page Top</span>
+      <span class="footer__pagetop-arrow"></span>
+    </a>
+
+  </footer>
+
+
+  <!-- エントリーボタン -->
+  <div class="entry-btn entry-btn--floating">
+    <a class="entry-btn__entry" href="/entry/">
+      <img src="assets/img/top/entry02.png" alt="エントリー">
+    </a>
+    <a class="entry-btn__recruit" href="/recruit/">
+      <img src="assets/img/top/recruit.png" alt="募集要項">
+    </a>
+  </div>
+
+  <!-- slick -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

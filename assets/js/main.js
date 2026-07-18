@@ -104,7 +104,7 @@ $(function () {
     });
   });
 
-  
+
 
   /* =================================
 メインビジュアル　スライダー
@@ -284,95 +284,81 @@ $(function () {
       }
     }]
   });
-/* =================================
-よくある質問
-================================= */
+  /* =================================
+  よくある質問
+  ================================= */
 
   $(".top-faq__question").on("click", function () {
-  $(this).toggleClass("is-open");
-  $(this).next(".top-faq__answer").slideToggle(300);
-});
+    $(this).toggleClass("is-open");
+    $(this).next(".top-faq__answer").slideToggle(300);
+  });
 
-/* =================================
-トップに戻るボタン
-================================= */
-$(".footer__pagetop").on("click", function (e) {
-  e.preventDefault();
+  /* =================================
+  トップに戻るボタン
+  ================================= */
+  $(".footer__pagetop").on("click", function (e) {
+    e.preventDefault();
 
-  $("html, body").animate({
-    scrollTop: 0
-  }, 500);
-});
+    $("html, body").animate({
+      scrollTop: 0
+    }, 500);
+  });
 
+  /* =================================
+  エントリーボタン
+  ================================= */
 
-$(function () {
-  const $window = $(window);
-  const $button = $(".entry-btn--floating");
-  const $footer = $(".footer");
+  $(function () {
+    const $window = $(window);
+    const $button = $(".entry-btn--floating");
+    const $footer = $(".footer");
 
-  if (!$button.length) return;
+    if (!$button.length) return;
 
-  const fixedBottom = 30;      // 画面下余白
-  const footerOverlap = 60;    // フッターへ60px重ねる
-  const showPosition = 30;    // 100pxスクロールで表示
+    const fixedBottom = 30; // 画面下余白
+    const footerOverlap = 60; // フッターへ60px重ねる
+    const showPosition = 30; // 100pxスクロールで表示
 
-  function floatingEntry() {
-    const scrollTop = $window.scrollTop();
-    const windowHeight = $window.height();
+    function floatingEntry() {
+      const scrollTop = $window.scrollTop();
+      const windowHeight = $window.height();
 
-    // フェードイン
-    $button.toggleClass("is-show", scrollTop > showPosition);
+      // フェードイン
+      $button.toggleClass("is-show", scrollTop > showPosition);
 
-    // フッター位置
-    const footerTop = $footer.offset().top;
-    const buttonHeight = $button.outerHeight();
+      // フッター位置
+      const footerTop = $footer.offset().top;
+      const buttonHeight = $button.outerHeight();
 
-    // ボタン下端の現在位置
-    const buttonBottom = scrollTop + windowHeight - fixedBottom;
+      // ボタン下端の現在位置
+      const buttonBottom = scrollTop + windowHeight - fixedBottom;
 
-    if (buttonBottom > footerTop + footerOverlap) {
+      if (buttonBottom > footerTop + footerOverlap) {
 
-      // フッター位置で停止
-      $button.css({
-        position: "absolute",
-        top: footerTop - buttonHeight + footerOverlap,
-        bottom: "auto"
-      });
+        // フッター位置で停止
+        $button.css({
+          position: "absolute",
+          top: footerTop - buttonHeight + footerOverlap,
+          bottom: "auto"
+        });
 
-    } else {
+      } else {
 
-      // 通常は追従
-      $button.css({
-        position: "fixed",
-        top: "auto",
-        bottom: fixedBottom
-      });
+        // 通常は追従
+        $button.css({
+          position: "fixed",
+          top: "auto",
+          bottom: fixedBottom
+        });
 
+      }
     }
-  }
 
-  $window.on("scroll resize", floatingEntry);
-  floatingEntry();
-});
-
-
-
+    $window.on("scroll resize", floatingEntry);
+    floatingEntry();
+  });
 })
 // jQueryここまで
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -405,7 +391,9 @@ if (loading) {
   if (document.readyState === "complete") {
     hideLoading();
   } else {
-    window.addEventListener("load", hideLoading, { once: true });
+    window.addEventListener("load", hideLoading, {
+      once: true
+    });
   }
 }
 
@@ -748,4 +736,269 @@ if (flowSection) {
     duration: .3,
     ease: "power2.out"
   }, "-=.1");
+}
+
+/* =================================
+三和を知る下層ページメインビジュアル
+================================= */
+
+const aboutMv = document.querySelector(".about-mv");
+
+if (aboutMv) {
+  const content = aboutMv.querySelector(".about-mv__content");
+  const title = aboutMv.querySelector(".about-mv__title");
+  const lineGray = aboutMv.querySelector(".about-mv__line-gray");
+  const lineBlue = aboutMv.querySelector(".about-mv__line-blue");
+  const en = aboutMv.querySelector(".about-mv__en");
+  const number = aboutMv.querySelector(".about-mv__number");
+
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power3.out"
+    }
+  });
+
+  tl.fromTo(content, {
+    autoAlpha: 0,
+    x: 80,
+    y: -40,
+    scale: .94
+  }, {
+    autoAlpha: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    duration: 1.2
+  });
+
+  tl.fromTo(title, {
+    autoAlpha: 0,
+    y: 30
+  }, {
+    autoAlpha: 1,
+    y: 0,
+    duration: .8
+  }, "-=.6");
+
+  tl.to(lineGray, {
+    scaleX: 1,
+    duration: .35,
+    ease: "power2.out"
+  }, "-=.35");
+
+  tl.to(lineBlue, {
+    scaleX: 1,
+    duration: .65,
+    ease: "power2.out"
+  });
+
+  tl.fromTo(en, {
+    autoAlpha: 0,
+    x: 30
+  }, {
+    autoAlpha: 1,
+    x: 0,
+    duration: .8
+  }, "-=.35");
+
+  tl.fromTo(number, {
+    autoAlpha: 0,
+    scale: .7,
+    rotation: -5
+  }, {
+    autoAlpha: 1,
+    scale: 1,
+    rotation: 0,
+    duration: .7,
+    ease: "back.out(1.5)"
+  }, "-=.55");
+}
+
+
+/* =================================
+三和を知る下層ページメインビジュアル下
+================================= */
+
+
+gsap.utils.toArray(".about-content").forEach((section) => {
+  const heading = section.querySelector(".about-content__heading");
+  const text = section.querySelector(".about-content__text");
+  const image = section.querySelector(".about-content__image");
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top 72%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  tl.from(heading, {
+    x: -45,
+    autoAlpha: 0,
+    duration: .8,
+    ease: "power3.out"
+  }).from(text, {
+    x: -45,
+    autoAlpha: 0,
+    duration: .8,
+    ease: "power3.out"
+  }, "-=.45").from(image, {
+    x: 60,
+    autoAlpha: 0,
+    scale: .97,
+    duration: 1,
+    ease: "power3.out"
+  }, "-=.6");
+});
+
+/* =================================
+社員インタビュー MV
+================================= */
+
+gsap.registerPlugin(ScrollTrigger);
+
+const interviewMv = document.querySelector(".interview-mv");
+
+if (interviewMv) {
+  const catchText = interviewMv.querySelector(".interview-mv__catch");
+  const profile = interviewMv.querySelector(".interview-mv__profile");
+  const illustration = interviewMv.querySelector(".interview-mv__illustration");
+  const info = interviewMv.querySelector(".interview-mv__info");
+  const image = interviewMv.querySelector(".interview-mv__image");
+  const imageElement = image?.querySelector("img");
+
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 769px)", () => {
+    gsap.set(catchText, {
+      y: 30,
+      autoAlpha: 0
+    });
+
+    gsap.set(profile, {
+      scale: .85,
+      autoAlpha: 0
+    });
+
+    gsap.set(illustration, {
+      y: 40,
+      autoAlpha: 0
+    });
+
+    gsap.set(info, {
+      x: 30,
+      autoAlpha: 0
+    });
+
+    gsap.set(image, {
+      clipPath: "inset(0 100% 0 0)"
+    });
+
+    gsap.set(imageElement, {
+      scale: 1.08
+    });
+
+    const tl = gsap.timeline({
+      defaults: {
+        ease: "power3.out"
+      }
+    });
+
+    tl.to(image, {
+      clipPath: "inset(0 0% 0 0)",
+      duration: 1.2
+    })
+      .to(imageElement, {
+        scale: 1,
+        duration: 1.5
+      }, "<")
+      .to(catchText, {
+        y: 0,
+        autoAlpha: 1,
+        duration: .8
+      }, "-=.8")
+      .to(profile, {
+        scale: 1,
+        autoAlpha: 1,
+        duration: .9
+      }, "-=.55")
+      .to(illustration, {
+        y: 0,
+        autoAlpha: 1,
+        duration: .8
+      }, "-=.5")
+      .to(info, {
+        x: 0,
+        autoAlpha: 1,
+        duration: .8
+      }, "-=.65");
+  });
+
+  mm.add("(max-width: 768px)", () => {
+    gsap.set(image, {
+      clipPath: "inset(0 0 100% 0)"
+    });
+
+    gsap.set(imageElement, {
+      scale: 1.08
+    });
+
+    gsap.set(catchText, {
+      y: 25,
+      autoAlpha: 0
+    });
+
+    gsap.set(profile, {
+      y: 30,
+      scale: .9,
+      autoAlpha: 0
+    });
+
+    gsap.set(illustration, {
+      y: 25,
+      autoAlpha: 0
+    });
+
+    gsap.set(info, {
+      x: 20,
+      autoAlpha: 0
+    });
+
+    const tl = gsap.timeline({
+      defaults: {
+        ease: "power3.out"
+      }
+    });
+
+    tl.to(image, {
+      clipPath: "inset(0 0 0% 0)",
+      duration: 1
+    })
+      .to(imageElement, {
+        scale: 1,
+        duration: 1.3
+      }, "<")
+      .to(catchText, {
+        y: 0,
+        autoAlpha: 1,
+        duration: .7
+      }, "-=.5")
+      .to(profile, {
+        y: 0,
+        scale: 1,
+        autoAlpha: 1,
+        duration: .8
+      }, "-=.35")
+      .to(illustration, {
+        y: 0,
+        autoAlpha: 1,
+        duration: .7
+      }, "-=.45")
+      .to(info, {
+        x: 0,
+        autoAlpha: 1,
+        duration: .7
+      }, "-=.55");
+  });
 }
