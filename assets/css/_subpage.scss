@@ -378,10 +378,93 @@
 
   }
 
-  &__pager {
-    padding: 80px 16px;
+  &__pager-wrap {
+    padding: 0 16px 160px;
     text-align: center;
+
+    @include tab{
+    padding: 40px 16px;
+    }
   }
+
+  &__pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 5.5%;
+  transform: translateY(-50%);
+
+  @include tab {
+   flex-direction: column;
+    align-items: center;
+      transform: translateY(0);
+
+    
+  }
+
+}
+
+&__pager-link {
+  display: flex;
+  align-items: center;
+  width: 280px;
+  padding: 2px 15px;
+  color: #fff;
+  background: #333;
+  border-radius: 999px;
+  transition: opacity .3s;
+
+  &:hover { opacity: .7; }
+
+
+}
+
+&__pager-link--next {
+  justify-content: flex-end;
+}
+
+&__pager-link--prev &__pager-text {
+  margin-left: 20px;
+}
+
+&__pager-link--next &__pager-text {
+  margin-right: 20px;
+}
+
+&__pager-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include tab {
+    width: 44px;
+    height: 44px;
+  }
+
+  @include sp {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+&__pager-text {
+  line-height: 1.5;
+}
+
+&__bottom {
+  padding-bottom: 130px;
+  background: #effaff;
+
+  @include sp {
+    padding-bottom: 70px;
+  }
+}
 
 }
 
