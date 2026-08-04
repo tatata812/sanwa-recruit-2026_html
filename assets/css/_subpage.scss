@@ -382,6 +382,10 @@
     padding: 0 16px 160px;
     text-align: center;
 
+    &--w {
+      background-color: #fff;
+    }
+
     @include tab{
     padding: 40px 16px;
     }

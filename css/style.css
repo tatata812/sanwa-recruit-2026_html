@@ -1947,6 +1947,9 @@
   padding: 0 16px 160px;
   text-align: center;
 }
+.interview__pager-wrap--w {
+  background-color: #fff;
+}
 @media (max-width: 820px) {
   .interview__pager-wrap {
     padding: 40px 16px;
