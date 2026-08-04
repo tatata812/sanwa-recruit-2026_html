@@ -527,7 +527,7 @@ gsap.utils.toArray(".top-concept__content").forEach((content) => {
 背景色を変更する
 ================================= */
 
-gsap.utils.toArray(".main, section[data-bg]").forEach((section) => {
+gsap.utils.toArray("section[data-bg]").forEach((section) => {
   gsap.fromTo(
     section,
     {
