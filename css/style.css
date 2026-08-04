@@ -2170,7 +2170,7 @@
   .interview-mv__illustration--th {
     bottom: 4%;
     left: 35%;
-    width: 32%;
+    width: 31%;
   }
 }
 .interview-mv__illustration--mi {
@@ -2181,6 +2181,16 @@
     bottom: 4%;
     left: 36%;
     width: 27%;
+  }
+}
+.interview-mv__illustration--tk {
+  width: 28%;
+}
+@media (max-width: 820px) {
+  .interview-mv__illustration--tk {
+    bottom: 4%;
+    left: 35%;
+    width: 29%;
   }
 }
 .interview-mv__illustration img {

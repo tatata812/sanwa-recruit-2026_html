@@ -614,7 +614,7 @@
       @include tab {
         bottom: 4%;
         left: 35%;
-        width: 32%;
+        width: 31%;
       }
     }
 
@@ -625,6 +625,16 @@
         bottom: 4%;
         left: 36%;
         width: 27%;
+      }
+    }
+
+        &--tk {
+      width: 28%;
+
+      @include tab {
+        bottom: 4%;
+        left: 35%;
+        width: 29%;
       }
     }
 
