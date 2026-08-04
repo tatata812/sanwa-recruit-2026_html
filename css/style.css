@@ -2720,6 +2720,7 @@
   width: 100%;
   border: 1px solid #777;
   background: #fff;
+  font-size: 16px;
 }
 .entry__body input[type=text],
 .entry__body input[type=email],
