@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="email=no,telephone=no,address=no">
+  <title>募集要項</title>
+  <meta name="description" content="<?php echo $des; ?>">
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:description" content="<?php echo $des; ?>">
+  <meta property="og:site_name"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/fb.jpg">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta name="twitter:description" content="<?php echo $des; ?>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;800&family=Noto+Sans:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="assets/css/html5reset-1.6.1.css">
+  <link rel="stylesheet" href="assets/css/style.css?20260121">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+
+
+<body class="wrap">
+  <header class="header">
+    <div class="header__inner">
+
+      <a class="header__logo" href="index.html">
+        <img class="header__logo-img" src="assets/img/common/header-logo.png" alt="sanwa" width="264" height="64">
+      </a>
+
+      <nav class="header__nav" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-about">
+              事業内容
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-data">
+              数字で見る三和
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-interview">
+              社員の声
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-flow">
+              選考フロー
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-faq">
+              よくある質問
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__links">
+        <a class="header__link header__link--requirements" href="/requirements/">
+          募集要項
+        </a>
+
+        <a class="header__link header__link--entry" href="/entry/">
+          エントリー
+        </a>
+      </div>
+
+      <button class="header__menu-btn" type="button" aria-controls="global-menu" aria-expanded="false">
+        <span class="header__menu-lines" aria-hidden="true">
+          <span class="header__menu-line"></span>
+          <span class="header__menu-line"></span>
+        </span>
+
+        <span class="header__menu-text">
+          menu
+        </span>
+      </button>
+
+    </div>
+
+    <div class="header-menu" id="global-menu" aria-hidden="true">
+      <div class="header-menu__inner">
+
+        <button class="header-menu__close" type="button" aria-label="メニューを閉じる">
+          <span class="header-menu__close-line"></span>
+          <span class="header-menu__close-line"></span>
+        </button>
+
+        <nav class="header-menu__nav" aria-label="ハンバーガーメニュー">
+          <ul class="header-menu__list">
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="business.html">
+                <span class="header-menu__number">01</span>
+                <span class="header-menu__text">事業内容</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="industry.html">
+                <span class="header-menu__number">02</span>
+                <span class="header-menu__text">建材業界</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="history.html">
+                <span class="header-menu__number">03</span>
+                <span class="header-menu__text">創業140年</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="strength.html">
+                <span class="header-menu__number">04</span>
+                <span class="header-menu__text">山口県シェアNO1</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-data">
+                <span class="header-menu__text">数字で見る三和</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-interview">
+                <span class="header-menu__text">社員インタビュー</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-flow">
+                <span class="header-menu__text">選考フロー</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-faq">
+                <span class="header-menu__text">よくある質問</span>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="header-menu__buttons">
+          <a class="header-menu__button header-menu__button--requirements" href="/requirements/">
+            募集要項
+          </a>
+          <a class="header-menu__button header-menu__button--entry" href="/entry/">
+            エントリー
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="main page outline">
+    <div class="page__title-wrap">
+      <div class="page__title">
+        <div class="page__title-inner">
+          <h1 class="page__heading">募集要項</h1>
+          <span class="page__line"></span>
+        </div>
+      </div>
+
+      <div class="page__lead">
+        <p>やる気あふれる社員を募集中！！！</p>
+      </div>
+    </div>
+
+    <section class="page__content">
+      <div class="page__content-inner">
+
+  <h2 class="outline__heading">募集要項</h2>
+
+    <table class="outline__table">
+      <tbody>
+        <tr>
+          <th>募集職種・分野</th>
+          <td>
+            <p>□営業職</p>
+            <ul>
+              <li>営業</li>
+              <li>工事課</li>
+              <li>営業企画課</li>
+              <li>システム商品課</li>
+              <li>CADセンター</li>
+              <li>ホームマテリア（インテリア）</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>募集対象</th>
+          <td>学部卒業以上 2027年3月卒業見込の方</td>
+        </tr>
+        <tr>
+          <th>募集学部・学科</th>
+          <td>全学部・全学科</td>
+        </tr>
+        <tr>
+          <th>募集人数</th>
+          <td>10名</td>
+        </tr>
+        <tr>
+          <th>募集内訳</th>
+          <td>営業職 10名</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="outline__entry">
+      <h3 class="outline__title">選考　まずはマイナビよりエントリーをお願いいたします。</h3>
+      <div class="outline__buttons">
+        <a href="https://job.mynavi.jp/27/pc/search/corp88883/outline.html" target="_blank" rel="noopener noreferrer"><img src="assets/img/subpage/bnr-mynavi.jpg" alt="マイナビ ENTRY"></a>
+        <a href="#" target="_blank" rel="noopener noreferrer"><img src="assets/img/subpage/bnr-career.png" alt="中途採用を希望の方はこちら"></a>
+      </div>
+    </div>
+
+    <table class="outline__table">
+      <tbody>
+        <tr>
+          <th>内定までの所要日数</th>
+          <td>会社説明会参加から内定までの所要日数：およそ30日</td>
+        </tr>
+        <tr>
+          <th>選考方法</th>
+          <td>適性検査・面接</td>
+        </tr>
+        <tr>
+          <th>提出書類</th>
+          <td>
+            <ul>
+              <li>履歴書（写真貼付）</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>提出先</th>
+          <td>
+            〒754-0075<br>
+            山口市小郡中夫町1番15号株式会社三和<br>
+            担当：経営管理課　課長　徳田 正巳
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="outline__heading">採用後の待遇</h2>
+
+    <table class="outline__table">
+      <tbody>
+        <tr>
+          <th>基本給</th>
+          <td>2027年4月実績 四大卒　基本給　207,000円</td>
+        </tr>
+        <tr>
+          <th>モデル月収例</th>
+          <td>四大卒　230,000円（基本給　207,000円　営業手当23,000円）</td>
+        </tr>
+        <tr>
+          <th>諸手当</th>
+          <td>
+            <ul>
+              <li>営業手当　23,000円～</li>
+              <li>通勤手当　31,600円まで支給（通勤距離による）</li>
+              <li>家族手当　10,000円（配偶者ありの場合）</li>
+              <li>資格手当　取得資格により支給</li>
+              <li>管理職手当　役職に応じて支給</li>
+              <li>休日勤務手当</li>
+              <li>深夜勤務手当</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>昇給</th>
+          <td>年1回（4月）</td>
+        </tr>
+        <tr>
+          <th>賞与</th>
+          <td>年2回（6月、12月）</td>
+        </tr>
+        <tr>
+          <th>休日休暇</th>
+          <td>
+            <ul>
+              <li>土曜日・日曜日・祝日（休日カレンダーによる）</li>
+            </ul>
+            <p>※ショールーム（Gallery宇部）勤務の場合は異なります</p>
+            <ul>
+              <li>夏期、年末年始</li>
+              <li>年間休日116日</li>
+              <li>有給休暇</li>
+              <li>産前・産後休暇</li>
+              <li>育児休暇</li>
+              <li>介護休暇</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>待遇・福利厚生・社内制度</th>
+          <td>
+            <p>■保険 健康、厚生年金、雇用、労災の各種保険</p>
+            <p>■借上社宅 自宅通勤不可能な人、家賃の50％会社負担、但し30,000円限度</p>
+          </td>
+        </tr>
+        <tr>
+          <th>勤務地</th>
+          <td>周南市、防府市、山口市、宇部市、下関市、福岡県古賀市のいずれか</td>
+        </tr>
+        <tr>
+          <th>勤務時間</th>
+          <td>8:00～17:00（実働8時間）</td>
+        </tr>
+        <tr>
+          <th>定年</th>
+          <td>60歳（再雇用制度あり　65歳まで）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="outline__heading">採用実績</h2>
+
+    <table class="outline__table">
+      <tbody>
+        <tr>
+          <th>出身大学</th>
+          <td>
+            愛媛大学、吉備国際大学、九州共立大学、九州国際大学、九州産業大学、近畿大学、県立広島大学、皇學館大学、甲南大学、神戸学院大学、下関市立大学、西南学院大学、専修大学、中央学院大学、中央大学、東亜大学、東洋大学、徳山大学、中村学園大学、長崎大学、奈良大学、日本大学、広島修道大学、福岡大学、福岡工業大学、福山大学、松山大学、南九州大学、宮崎産業経営大学、山口大学、龍谷大学、和歌山大学、水産大学校、宇部短期大学、広島経済大学
+          </td>
+        </tr>
+        <tr>
+          <th>採用人数</th>
+          <td>
+            <ul>
+              <li>2023年　大卒 1名　高卒 1名　中途 0名</li>
+              <li>2022年　大卒 1名　高卒 0名　中途 7名</li>
+              <li>2021年　大卒 2名　高卒 1名　中途 0名</li>
+              <li>2020年　大卒 3名　高卒 1名　中途 0名</li>
+              <li>2019年　大卒 0名　高卒 0名　中途 0名</li>
+              <li>2018年　大卒 2名　高卒 1名　中途 4名</li>
+              <li>2017年　大卒 3名　高卒 2名　中途 3名</li>
+              <li>2016年　大卒 3名　高卒 3名　中途 4名</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+      </div>
+
+    </section>
+
+
+
+
+  </div>
+  <!--main end-->
+
+  <footer class="footer">
+
+    <div class="footer__body">
+
+      <a href="/" class="footer__logo">
+        <img src="assets/img/common/logo.png" alt="株式会社三和">
+      </a>
+
+      <address class="footer__address">
+        株式会社三和　〒754-0075 山口県山口市小郡中央通1丁目15号<br>
+        TEL 083-973-2829　/　FAX 083-973-5321
+      </address>
+
+      <small class="footer__copyright">
+        &copy; 2026 Sanwa Co.,LTD.
+      </small>
+
+    </div>
+
+    <a href="#" class="footer__pagetop">
+      <span class="footer__pagetop-text">Page Top</span>
+      <span class="footer__pagetop-arrow"></span>
+    </a>
+
+  </footer>
+
+  <!-- ローディング画面 -->
+
+
+  <!-- エントリーボタン -->
+  <div class="entry-btn entry-btn--floating">
+    <a class="entry-btn__entry" href="/entry/">
+      <img src="assets/img/top/entry02.png" alt="エントリー">
+    </a>
+    <a class="entry-btn__recruit" href="/recruit/">
+      <img src="assets/img/top/recruit.png" alt="募集要項">
+    </a>
+  </div>
+
+  <!-- slick -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

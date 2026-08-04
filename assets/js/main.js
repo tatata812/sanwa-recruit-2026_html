@@ -527,12 +527,13 @@ gsap.utils.toArray(".top-concept__content").forEach((content) => {
 背景色を変更する
 ================================= */
 
-gsap.utils.toArray("section[data-bg]").forEach((section) => {
-
+gsap.utils.toArray(".main, section[data-bg]").forEach((section) => {
   gsap.fromTo(
-    section, {
+    section,
+    {
       backgroundColor: "#fff"
-    }, {
+    },
+    {
       backgroundColor: section.dataset.bg,
       duration: 1.5,
       ease: "none",
@@ -544,7 +545,6 @@ gsap.utils.toArray("section[data-bg]").forEach((section) => {
       }
     }
   );
-
 });
 
 /* =================================
@@ -1002,3 +1002,59 @@ if (interviewMv) {
       }, "-=.55");
   });
 }
+
+/* =================================
+下層の共通タイトル
+================================= */
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".page__title", {
+  x: -80,
+  opacity: 0,
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".page__title-wrap",
+    start: "top 80%",
+    once: true
+  }
+});
+
+gsap.from(".page__lead", {
+  x: 80,
+  opacity: 0,
+  duration: 1,
+  delay: 0.2,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".page__title-wrap",
+    start: "top 80%",
+    once: true
+  }
+});
+
+gsap.from(".page__heading", {
+  y: 30,
+  opacity: 0,
+  duration: 0.8,
+  delay: 0.4,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".page__title-wrap",
+    start: "top 80%",
+    once: true
+  }
+});
+
+gsap.from(".page__line", {
+  scaleX: 0,
+  transformOrigin: "left center",
+  duration: 0.8,
+  delay: 0.6,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".page__title-wrap",
+    start: "top 80%",
+    once: true
+  }
+});

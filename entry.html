@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="email=no,telephone=no,address=no">
+  <title>お問い合わせ</title>
+  <meta name="description" content="<?php echo $des; ?>">
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:description" content="<?php echo $des; ?>">
+  <meta property="og:site_name"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/fb.jpg">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta name="twitter:description" content="<?php echo $des; ?>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;800&family=Noto+Sans:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="assets/css/html5reset-1.6.1.css">
+  <link rel="stylesheet" href="assets/css/style.css?20260121">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+
+
+<body class="wrap">
+  <header class="header">
+    <div class="header__inner">
+
+      <a class="header__logo" href="index.html">
+        <img class="header__logo-img" src="assets/img/common/header-logo.png" alt="sanwa" width="264" height="64">
+      </a>
+
+      <nav class="header__nav" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-about">
+              事業内容
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-data">
+              数字で見る三和
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-interview">
+              社員の声
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-flow">
+              選考フロー
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#top-faq">
+              よくある質問
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__links">
+        <a class="header__link header__link--requirements" href="/requirements/">
+          募集要項
+        </a>
+
+        <a class="header__link header__link--entry" href="/entry/">
+          エントリー
+        </a>
+      </div>
+
+      <button class="header__menu-btn" type="button" aria-controls="global-menu" aria-expanded="false">
+        <span class="header__menu-lines" aria-hidden="true">
+          <span class="header__menu-line"></span>
+          <span class="header__menu-line"></span>
+        </span>
+
+        <span class="header__menu-text">
+          menu
+        </span>
+      </button>
+
+    </div>
+
+    <div class="header-menu" id="global-menu" aria-hidden="true">
+      <div class="header-menu__inner">
+
+        <button class="header-menu__close" type="button" aria-label="メニューを閉じる">
+          <span class="header-menu__close-line"></span>
+          <span class="header-menu__close-line"></span>
+        </button>
+
+        <nav class="header-menu__nav" aria-label="ハンバーガーメニュー">
+          <ul class="header-menu__list">
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="business.html">
+                <span class="header-menu__number">01</span>
+                <span class="header-menu__text">事業内容</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="industry.html">
+                <span class="header-menu__number">02</span>
+                <span class="header-menu__text">建材業界</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="history.html">
+                <span class="header-menu__number">03</span>
+                <span class="header-menu__text">創業140年</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item">
+              <a class="header-menu__link" href="strength.html">
+                <span class="header-menu__number">04</span>
+                <span class="header-menu__text">山口県シェアNO1</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-data">
+                <span class="header-menu__text">数字で見る三和</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-interview">
+                <span class="header-menu__text">社員インタビュー</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-flow">
+                <span class="header-menu__text">選考フロー</span>
+              </a>
+            </li>
+
+            <li class="header-menu__item sp-block">
+              <a class="header-menu__link" href="#top-faq">
+                <span class="header-menu__text">よくある質問</span>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+        <div class="header-menu__buttons">
+          <a class="header-menu__button header-menu__button--requirements" href="/requirements/">
+            募集要項
+          </a>
+          <a class="header-menu__button header-menu__button--entry" href="/entry/">
+            エントリー
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="main page entry">
+    <div class="page__title-wrap">
+      <div class="page__title">
+        <div class="page__title-inner">
+          <h1 class="page__heading">お問い合わせ</h1>
+          <span class="page__line"></span>
+        </div>
+      </div>
+
+  <div class="page__lead">
+    <p>採用情報についてのお問い合わせをご希望の場合は<br><a href="privacy.html">プライバシーポリシー</a>をご確認のうえ<br>こちらからお問い合わせください。</p>
+
+  </div>
+    </div>
+
+    <section class="page__content">
+      <div class="page__content-inner">
+
+    <form class="entry__form" action="#" method="post">
+      <div class="entry__row">
+        <div class="entry__head">
+          <label for="entry-name">お名前</label>
+          <span class="entry__required">必須</span>
+        </div>
+        <div class="entry__body">
+          <input type="text" id="entry-name" name="name" autocomplete="name" required>
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <label for="entry-kana">フリガナ</label>
+        </div>
+        <div class="entry__body">
+          <input type="text" id="entry-kana" name="kana">
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <label for="entry-birthday">生年月日</label>
+        </div>
+        <div class="entry__body">
+          <input type="text" id="entry-birthday" name="birthday" class="entry__input--short">
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <span>性別</span>
+          <span class="entry__required">必須</span>
+        </div>
+        <div class="entry__body">
+          <div class="entry__radio-group">
+            <label><input type="radio" name="gender" value="男" required><span>男</span></label>
+            <label><input type="radio" name="gender" value="女"><span>女</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <label for="entry-email">メールアドレス</label>
+          <span class="entry__required">必須</span>
+        </div>
+        <div class="entry__body">
+          <input type="email" id="entry-email" name="email" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <label for="entry-postal-code">ご住所</label>
+        </div>
+        <div class="entry__body">
+          <div class="entry__postal">
+            <span>〒</span>
+            <input type="text" id="entry-postal-code" name="postal-code" inputmode="numeric" autocomplete="postal-code">
+          </div>
+          <input type="text" name="address" autocomplete="street-address">
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <label for="entry-tel">お電話番号</label>
+          <span class="entry__required">必須</span>
+        </div>
+        <div class="entry__body">
+          <input type="tel" id="entry-tel" name="tel" autocomplete="tel" required>
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <label for="entry-school">最終学校名</label>
+          <span class="entry__required">必須</span>
+        </div>
+        <div class="entry__body">
+          <input type="text" id="entry-school" name="school" required>
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <label for="entry-graduation">卒業（予定）年月日</label>
+          <span class="entry__required">必須</span>
+        </div>
+        <div class="entry__body">
+          <input type="text" id="entry-graduation" name="graduation" class="entry__input--short" required>
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <span>説明会案内のメール</span>
+          <span class="entry__required">必須</span>
+        </div>
+        <div class="entry__body">
+          <div class="entry__radio-group">
+            <label><input type="radio" name="briefing-mail" value="希望する" required><span>希望する</span></label>
+            <label><input type="radio" name="briefing-mail" value="希望しない"><span>希望しない</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry__row">
+        <div class="entry__head">
+          <label for="entry-message">お問合せ内容</label>
+          <span class="entry__required">必須</span>
+        </div>
+        <div class="entry__body">
+          <textarea id="entry-message" name="message" rows="8" required></textarea>
+        </div>
+      </div>
+
+      <div class="entry__submit">
+        <button type="submit">確認画面へ</button>
+      </div>
+    </form>
+
+  
+
+      </div>
+
+    </section>
+
+
+
+
+  </div>
+  <!--main end-->
+
+  <footer class="footer">
+
+    <div class="footer__body">
+
+      <a href="/" class="footer__logo">
+        <img src="assets/img/common/logo.png" alt="株式会社三和">
+      </a>
+
+      <address class="footer__address">
+        株式会社三和　〒754-0075 山口県山口市小郡中央通1丁目15号<br>
+        TEL 083-973-2829　/　FAX 083-973-5321
+      </address>
+
+      <small class="footer__copyright">
+        &copy; 2026 Sanwa Co.,LTD.
+      </small>
+
+    </div>
+
+    <a href="#" class="footer__pagetop">
+      <span class="footer__pagetop-text">Page Top</span>
+      <span class="footer__pagetop-arrow"></span>
+    </a>
+
+  </footer>
+
+  <!-- ローディング画面 -->
+
+
+  <!-- エントリーボタン -->
+  <div class="entry-btn entry-btn--floating">
+    <a class="entry-btn__entry" href="/entry/">
+      <img src="assets/img/top/entry02.png" alt="エントリー">
+    </a>
+    <a class="entry-btn__recruit" href="/recruit/">
+      <img src="assets/img/top/recruit.png" alt="募集要項">
+    </a>
+  </div>
+
+  <!-- slick -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
