@@ -1185,6 +1185,10 @@
 
     }
 
+    &--m-none {
+    margin-bottom: 0;
+    }
+
     th,
     td {
       padding: 24px 20px;
@@ -1226,6 +1230,7 @@
   }
 
   &__entry {
+    padding-top: 64px;
     margin-bottom: 64px;
   }
 

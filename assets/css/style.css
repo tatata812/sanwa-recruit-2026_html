@@ -2678,6 +2678,9 @@
     border: 1px solid #ececec;
   }
 }
+.outline__table--m-none {
+  margin-bottom: 0;
+}
 .outline__table th,
 .outline__table td {
   padding: 24px 20px;
@@ -2708,6 +2711,7 @@
   }
 }
 .outline__entry {
+  padding-top: 64px;
   margin-bottom: 64px;
 }
 .outline__title {
