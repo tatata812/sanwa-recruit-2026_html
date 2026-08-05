@@ -42,51 +42,50 @@ $(function () {
   });
 
   /* =================================
-  ページ内リンク　ヘッダーの高さ考慮
- ================================= */
-  var $header = $('.header');
+ページ内リンク　ヘッダーの高さ考慮
+================================= */
+var $header = $('.header');
 
-  function getHeaderH() {
-    if (!$header.length) return 0;
-    return $header.outerHeight() || 0;
-  }
+function getHeaderH() {
+  return $header.length ? $header.outerHeight() : 0;
+}
 
-  function scrollToHash(hash, speed) {
-    if (!hash || hash === '#') return;
+function scrollToHash(hash, speed) {
+  if (!hash || hash === '#') return;
 
-    var $target = $(hash);
-    if (!$target.length) return;
+  var $target = $(hash);
+  if (!$target.length) return;
 
-    var targetTop = $target.offset().top - getHeaderH();
+  $('html, body').stop().animate({
+    scrollTop: $target.offset().top - getHeaderH()
+  }, speed || 0);
+}
 
-    $('html, body').stop().animate({
-        scrollTop: targetTop
-      },
-      typeof speed === 'number' ? speed : 400
-    );
-  }
+// ページ内リンク
+$(document).on('click', 'a[href*="#"]', function(e) {
+  var url = new URL(this.href, location.href);
 
-  $(document).on('click', 'a[href^="#"]', function (e) {
-    var href = $(this).attr('href');
-    if (!href || href === '#') return;
-    if (!$(href).length) return;
+  // 別ページなら通常遷移
+  if (url.pathname !== location.pathname) return;
 
-    e.preventDefault();
+  var hash = url.hash;
+  if (!hash || !$(hash).length) return;
 
-    if (history.pushState) {
-      history.pushState(null, null, href);
-    } else {
-      location.hash = href;
-    }
+  e.preventDefault();
 
-    scrollToHash(href, 400);
-  });
+  history.pushState(null, null, hash);
 
-  $(window).on('load', function () {
-    if (location.hash) {
-      scrollToHash(location.hash, 0);
-    }
-  });
+  scrollToHash(hash, 400);
+});
+
+// ページ外から #付きで来た場合
+$(window).on('load', function() {
+  if (!location.hash) return;
+
+  setTimeout(function() {
+    scrollToHash(location.hash, 0);
+  }, 10);
+});
 
 
   /* =================================
