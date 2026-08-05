@@ -16,9 +16,9 @@
     content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/fb.jpg">
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title"
     content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
   <meta name="twitter:description" content="<?php echo $des; ?>">
@@ -28,166 +28,67 @@
     href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;800&family=Noto+Sans:wght@300;400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <link rel="stylesheet" href="assets/css/html5reset-1.6.1.css">
   <link rel="stylesheet" href="assets/css/style.css?20260121">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-
-
 <body class="wrap">
   <header class="header">
     <div class="header__inner">
-
-      <a class="header__logo" href="index.html">
-        <img class="header__logo-img" src="assets/img/common/header-logo.png" alt="sanwa" width="264" height="64">
-      </a>
-
+      <a class="header__logo" href="index.html"><img class="header__logo-img" src="assets/img/common/header-logo.png"
+          alt="sanwa" width="264" height="64"></a>
       <nav class="header__nav" aria-label="メインナビゲーション">
         <ul class="header__nav-list">
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#top-about">
-              事業内容
-            </a>
-          </li>
-
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#top-data">
-              数字で見る三和
-            </a>
-          </li>
-
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#top-interview">
-              社員の声
-            </a>
-          </li>
-
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#top-flow">
-              選考フロー
-            </a>
-          </li>
-
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#top-faq">
-              よくある質問
-            </a>
-          </li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#top-about">事業内容</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#top-data">数字で見る三和</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#top-interview">社員の声</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#top-flow">選考フロー</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#top-faq">よくある質問</a></li>
         </ul>
       </nav>
-
-      <div class="header__links">
-        <a class="header__link header__link--requirements" href="/requirements/">
-          募集要項
-        </a>
-
-        <a class="header__link header__link--entry" href="/entry/">
-          エントリー
-        </a>
-      </div>
-
-      <button class="header__menu-btn" type="button" aria-controls="global-menu" aria-expanded="false">
-        <span class="header__menu-lines" aria-hidden="true">
-          <span class="header__menu-line"></span>
-          <span class="header__menu-line"></span>
-        </span>
-
-        <span class="header__menu-text">
-          menu
-        </span>
-      </button>
-
+      <div class="header__links"><a class="header__link header__link--requirements" href="/requirements/">募集要項</a><a
+          class="header__link header__link--entry" href="/entry/">エントリー</a></div>
+      <button class="header__menu-btn" type="button" aria-controls="global-menu" aria-expanded="false"><span
+          class="header__menu-lines" aria-hidden="true"><span class="header__menu-line"></span><span
+            class="header__menu-line"></span></span><span class="header__menu-text">menu</span></button>
     </div>
-
     <div class="header-menu" id="global-menu" aria-hidden="true">
       <div class="header-menu__inner">
-
-        <button class="header-menu__close" type="button" aria-label="メニューを閉じる">
-          <span class="header-menu__close-line"></span>
-          <span class="header-menu__close-line"></span>
-        </button>
-
+        <button class="header-menu__close" type="button" aria-label="メニューを閉じる"><span
+            class="header-menu__close-line"></span><span class="header-menu__close-line"></span></button>
         <nav class="header-menu__nav" aria-label="ハンバーガーメニュー">
           <ul class="header-menu__list">
-
-            <li class="header-menu__item">
-              <a class="header-menu__link" href="business.html">
-                <span class="header-menu__number">01</span>
-                <span class="header-menu__text">事業内容</span>
-              </a>
-            </li>
-
-            <li class="header-menu__item">
-              <a class="header-menu__link" href="industry.html">
-                <span class="header-menu__number">02</span>
-                <span class="header-menu__text">建材業界</span>
-              </a>
-            </li>
-
-            <li class="header-menu__item">
-              <a class="header-menu__link" href="history.html">
-                <span class="header-menu__number">03</span>
-                <span class="header-menu__text">創業140年</span>
-              </a>
-            </li>
-
-            <li class="header-menu__item">
-              <a class="header-menu__link" href="strength.html">
-                <span class="header-menu__number">04</span>
-                <span class="header-menu__text">山口県シェアNO1</span>
-              </a>
-            </li>
-
-            <li class="header-menu__item sp-block">
-              <a class="header-menu__link" href="#top-data">
-                <span class="header-menu__text">数字で見る三和</span>
-              </a>
-            </li>
-
-            <li class="header-menu__item sp-block">
-              <a class="header-menu__link" href="#top-interview">
-                <span class="header-menu__text">社員インタビュー</span>
-              </a>
-            </li>
-
-            <li class="header-menu__item sp-block">
-              <a class="header-menu__link" href="#top-flow">
-                <span class="header-menu__text">選考フロー</span>
-              </a>
-            </li>
-
-            <li class="header-menu__item sp-block">
-              <a class="header-menu__link" href="#top-faq">
-                <span class="header-menu__text">よくある質問</span>
-              </a>
-            </li>
-
+            <li class="header-menu__item"><a class="header-menu__link" href="business.html"><span
+                  class="header-menu__number">01</span><span class="header-menu__text">事業内容</span></a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="industry.html"><span
+                  class="header-menu__number">02</span><span class="header-menu__text">建材業界</span></a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="history.html"><span
+                  class="header-menu__number">03</span><span class="header-menu__text">創業140年</span></a></li>
+            <li class="header-menu__item"><a class="header-menu__link" href="strength.html"><span
+                  class="header-menu__number">04</span><span class="header-menu__text">山口県シェアNO1</span></a></li>
+            <li class="header-menu__item sp-block"><a class="header-menu__link" href="#top-data"><span
+                  class="header-menu__text">数字で見る三和</span></a></li>
+            <li class="header-menu__item sp-block"><a class="header-menu__link" href="#top-interview"><span
+                  class="header-menu__text">社員インタビュー</span></a></li>
+            <li class="header-menu__item sp-block"><a class="header-menu__link" href="#top-flow"><span
+                  class="header-menu__text">選考フロー</span></a></li>
+            <li class="header-menu__item sp-block"><a class="header-menu__link" href="#top-faq"><span
+                  class="header-menu__text">よくある質問</span></a></li>
           </ul>
         </nav>
-
-        <div class="header-menu__buttons">
-          <a class="header-menu__button header-menu__button--requirements" href="/requirements/">
-            募集要項
-          </a>
-          <a class="header-menu__button header-menu__button--entry" href="/entry/">
-            エントリー
-          </a>
-        </div>
-
+        <div class="header-menu__buttons"><a class="header-menu__button header-menu__button--requirements"
+            href="/requirements/">募集要項</a><a class="header-menu__button header-menu__button--entry"
+            href="/entry/">エントリー</a></div>
       </div>
     </div>
   </header>
-
   <div class="main interview">
     <div class="interview__mv-bg">
-
       <section class="interview-mv">
-
         <div class="interview-mv__inner">
           <div class="interview-mv__content">
             <p class="interview-mv__catch">暮らしに寄り添う提案を。</p>
@@ -208,154 +109,134 @@
           </figure>
         </div>
       </section>
-
       <div class="section-heading">
         <h2 class="section-heading__title">インタビュー</h2>
         <div class="section-heading__line"><span class="section-heading__line-gray"></span><span
             class="section-heading__line-blue"></span></div>
       </div>
     </div>
-
     <section class="interview-content">
       <div class="interview-content__inner">
         <div class="interview-content__intro">
           <h2 class="interview-content__heading">仕事内容</h2>
           <p class="interview-content__lead">マテリアと呼ばれる<br>家具営業を担当している</p>
         </div>
-
         <div class="interview-content__list">
           <div class="interview-content__item">
             <p class="interview-content__label">入社の経緯や決め手</p>
             <h3 class="interview-content__title">人との出会いが、<br>入社の決め手に</h3>
             <div class="interview-content__text">
-              <p>出身は長崎県で、大学も長崎県内の大学に通っていた。大学では建築系の学部に所属していたことから、就職活動では建築業界を中心に見ていた。</p>
-              <p>最初のきっかけは、就職活動サイトであるオファーボックスからスカウトをいただいたことだった。その後、面接前に礒部さんとオンラインで何度か面談する機会があり、その中で三和にエントリーすることを決めた。</p>
-              <p>
-                入社を決めた理由として最も大きかったのは、140年以上続く企業の歴史である。将来性があり、長く続いていく会社で働きたいと考えていたため、長い歴史があることへの安心感や、山口県内でシェアNo.1という安定した業績に魅力を感じた。
+              <p>出身は長崎県で、大学も長崎県内の大学に通っていました。大学では建築系の学部に所属していたことから、就職活動では建築業界を中心に見ていました。</p>
+              <p>最初のきっかけは、就職活動サイトであるオファーボックスからスカウトをいただいたことでした。その後、面接前に礒部さんとオンラインで何度か面談する機会があり、その中で三和にエントリーすることを決めました。
               </p>
               <p>
-                最終的な決め手となったのは礒部さんの人柄である。他の企業とも何度も面談を行ったが、ここまで何でも質問に答えてくださり、話しやすい方はいなかったと感じている。その対応はずば抜けており、人事担当者である礒部さんの人柄の良さが、企業全体への信頼感につながった。
+                入社を決めた理由として最も大きかったのは、140年以上続く企業の歴史です。将来性があり、長く続いていく会社で働きたいと考えていたため、長い歴史があることへの安心感や、山口県内でシェアNo.1という安定した業績に魅力を感じました。
+              </p>
+              <p>
+                最終的な決め手となったのは礒部さんの人柄です。他の企業とも何度も面談を行いましたが、ここまで何でも質問に答えてくださり、話しやすい方はいなかったと感じています。その対応はずば抜けており、人事担当者である礒部さんの人柄の良さが、企業全体への信頼感につながりました。
               </p>
             </div>
           </div>
-
           <div class="interview-content__item">
             <p class="interview-content__label">入社前に感じた印象と入社後のギャップ</p>
             <h3 class="interview-content__title">入社前の安心感は、<br>入社後も変わらなかった</h3>
             <div class="interview-content__text">
-              <p>入社前から礒部さんに対する信頼感は強く持っていた。また、社員の方々も非常に優しく、自然体で接してくださる方ばかりであると感じていた。</p>
-              <p>入社前には会社へ来る機会もあり、社員の方々と関わる機会が多かったため、大きな安心感があった。入社後も顔を知っている社員が多くいたことで、不安なく仕事を始めることができた。</p>
+              <p>入社前から礒部さんに対する信頼感は強く持っていました。また、社員の方々も非常に優しく、自然体で接してくださる方ばかりであると感じていました。</p>
+              <p>入社前には会社へ来る機会もあり、社員の方々と関わる機会が多かったため、大きな安心感がありました。入社後も顔を知っている社員が多くいたことで、不安なく仕事を始めることができました。</p>
               <p>
-                実際に営業所で働き始めてからも、社員の皆さんは人当たりが良く、営業職の方々は話し上手で面白い人が多いと感じている。営業職にはガツガツした人が多いというイメージを持っていたが、実際には物腰の柔らかい方が多く、とても居心地が良い。また、オンとオフの切り替えが上手な方が多いと感じている。
+                実際に営業所で働き始めてからも、社員の皆さんは人当たりが良く、営業職の方々は話し上手で面白い人が多いと感じています。営業職にはガツガツした人が多いというイメージを持っていましたが、実際には物腰の柔らかい方が多く、とても居心地が良いです。また、オンとオフの切り替えが上手な方が多いと感じています。
               </p>
             </div>
           </div>
-
           <div class="interview-content__item">
             <p class="interview-content__label">仕事のおもしろさややりがい</p>
             <h3 class="interview-content__title">仕事の知識が、<br>暮らしも豊かにする</h3>
             <div class="interview-content__text">
-              <p>カーテンや照明は、普段あまりこだわらずに選んでいる方も多いと思う。しかし、この仕事を通じてそうした分野について深く学ぶことができる。</p>
+              <p>カーテンや照明は、普段あまりこだわらずに選んでいる方も多いと思います。しかし、この仕事を通じてそうした分野について深く学ぶことができます。</p>
               <p>
-                学んだ知識はお客様の生活をより豊かにするために活かせるだけでなく、自分自身の生活にも役立てることができる。そのため、自分のためにもなり、自分自身の暮らしにも興味が持てるようになったことがおもしろいと感じている。
+                学んだ知識はお客様の生活をより豊かにするために活かせるだけでなく、自分自身の生活にも役立てることができます。そのため、自分のためにもなり、自分自身の暮らしにも興味が持てるようになったことがおもしろいと感じています。
               </p>
             </div>
           </div>
-
           <div class="interview-content__item">
             <p class="interview-content__label">働き方について</p>
             <h3 class="interview-content__title">お客様と一緒に<br>理想の空間をつくる</h3>
             <div class="interview-content__text">
-              <p>入社前から三和には建材営業とマテリアの両方の事業があることは知っていたが、採用時は建材営業として採用された。その後、縁があり現在は家具営業を担当している。</p>
-              <p>現在はカーテンの採寸や家具に関する知識の習得に取り組んでいる。また、建売住宅に設置する家具の選定なども行っている。建売住宅とは、会社が先に住宅を建築し、お客様に見学・購入していただく物件である。</p>
-              <p>下関営業所では、マテリア部門の女性社員と事務員の方が女性で、それ以外の建材営業担当者は男性である。営業所内での人間関係によるストレスは少なく、働きやすい環境であると感じている。</p>
+              <p>入社前から三和には建材営業とマテリアの両方の事業があることは知っていましたが、採用時は建材営業として採用されました。その後、縁があり現在は家具営業を担当しています。</p>
+              <p>現在はカーテンの採寸や家具に関する知識の習得に取り組んでいます。また、建売住宅に設置する家具の選定なども行っています。建売住宅とは、会社が先に住宅を建築し、お客様に見学・購入していただく物件です。</p>
+              <p>下関営業所では、マテリア部門の女性社員と事務員の方が女性で、それ以外の建材営業担当者は男性です。営業所内での人間関係によるストレスは少なく、働きやすい環境であると感じています。</p>
               <p>
-                また、マテリアは一般的な営業職のイメージとは少し異なる。BtoCの側面もあり、お客様がカーテンなどを選ばれる際には直接お話ししながら、一緒にカタログを見て提案を行うこともある。今後もマテリアの仕事を続けていくことになると思う。
+                また、マテリアは一般的な営業職のイメージとは少し異なります。BtoCの側面もあり、お客様がカーテンなどを選ばれる際には直接お話ししながら、一緒にカタログを見て提案を行うこともあります。今後もマテリアの仕事を続けていくことになると思います。
               </p>
             </div>
           </div>
-
           <div class="interview-content__item">
             <p class="interview-content__label">社風について</p>
             <h3 class="interview-content__title">支え合いの文化が<br>根付く職場</h3>
             <div class="interview-content__text">
-              <p>今年から産休に入る社員の方がいるが、その方をどのようにフォローするかについて会社全体で話し合いが行われている。そうした助け合いの雰囲気が非常に魅力的だと感じている。</p>
+              <p>今年から産休に入る社員の方がいますが、その方をどのようにフォローするかについて会社全体で話し合いが行われています。そうした助け合いの雰囲気が非常に魅力的だと感じています。</p>
               <p>
-                また、企業として実績や業績があることも大きな魅力である。長い歴史があるからこそ、地域のメーカーや工務店、お客様からの信頼も厚い。昔からのつながりで取引が続いているお客様も多く、働いていて歴史ある企業だと実感する場面もある。
+                また、企業として実績や業績があることも大きな魅力です。長い歴史があるからこそ、地域のメーカーや工務店、お客様からの信頼も厚いです。昔からのつながりで取引が続いているお客様も多く、働いていて歴史ある企業だと実感する場面もあります。
               </p>
-              <p>実際に、以前三和と関わりのあった工務店で家を建てた方が、後になってカーテンや照明の交換のために連絡をくださることもある。</p>
-              <p>また、入社後すぐに営業所内のほとんどの社員の方が仕事を教えに来てくださった。そのため、部署へ配属された後も知っている人ばかりの環境で安心して仕事ができている。</p>
-              <p>中小企業だからこそ、一人ひとりに対してマンツーマンで教えてもらう機会が多く、社員一人ひとりをしっかり見てくれていると感じる。昼食も社員同士で外へ食べに行くことがあり、交流する機会が多い。</p>
+              <p>実際に、以前三和と関わりのあった工務店で家を建てた方が、後になってカーテンや照明の交換のために連絡をくださることもあります。</p>
+              <p>また、入社後すぐに営業所内のほとんどの社員の方が仕事を教えに来てくださいました。そのため、部署へ配属された後も知っている人ばかりの環境で安心して仕事ができています。</p>
+              <p>中小企業だからこそ、一人ひとりに対してマンツーマンで教えてもらう機会が多く、社員一人ひとりをしっかり見てくれていると感じます。昼食も社員同士で外へ食べに行くことがあり、交流する機会が多いです。</p>
             </div>
           </div>
-
           <div class="interview-content__item">
             <p class="interview-content__label">学生時代の経験で現在活かされていること</p>
+            <h3 class="interview-content__title">学生時代に培った<br>コミュニケーション能力が活かされている</h3>
             <div class="interview-content__text">
-              <p>大学では建築系の学部に所属していたが、学んだ専門知識以上にアルバイトでの接客経験が役立っていると感じている。</p>
-              <p>現在の仕事では人と話す力が非常に重要であり、学生時代に培ったコミュニケーション能力が活かされている。</p>
+              <p>大学では建築系の学部に所属していましたが、学んだ専門知識以上にアルバイトでの接客経験が役立っていると感じています。</p>
+              <p>現在の仕事では人と話す力が非常に重要であり、学生時代に培ったコミュニケーション能力が活かされています。</p>
             </div>
           </div>
-
-
           <div class="interview-content__item">
             <p class="interview-content__label">今後のビジョンやキャリアプラン</p>
             <h3 class="interview-content__title">成長を重ね、<br>次のステージへ</h3>
             <div class="interview-content__text">
-              <p>今後はどんどん昇格していきたいと考えている。</p>
-              <p>まずは2年目になるまでに知識をさらに身につけ、何を聞かれてもすぐに答えられる頼れる社員になりたい。そのためにも日々学び続けていきたいと考えている。</p>
-              <p>また、現在は手厚く指導していただいており、長く働き続けられそうだと感じている。その分、早く成長しなければならないという思いも強く持っている。</p>
+              <p>今後はどんどん昇格していきたいと考えています。</p>
+              <p>まずは2年目になるまでに知識をさらに身につけ、何を聞かれてもすぐに答えられる頼れる社員になりたいです。そのためにも日々学び続けていきたいと考えています。</p>
+              <p>また、現在は手厚く指導していただいており、長く働き続けられそうだと感じています。その分、早く成長しなければならないという思いも強く持っています。</p>
             </div>
           </div>
-
           <div class="interview-content__item">
             <p class="interview-content__label">休日の過ごし方</p>
             <h3 class="interview-content__title">自然も都会も<br>楽しめる休日</h3>
             <div class="interview-content__text">
-              <p>家族が遊びに来た際には海響館へ出かけた。</p>
-              <p>また、自宅の近くでは夕日がとてもきれいに見えるため、散歩をしながら景色を楽しむこともある。下関は福岡にも近いため、休日には福岡へ出かけることもある。</p>
+              <p>家族が遊びに来た際には海響館へ出かけました。</p>
+              <p>また、自宅の近くでは夕日がとてもきれいに見えるため、散歩をしながら景色を楽しむこともあります。下関は福岡にも近いため、休日には福岡へ出かけることもあります。</p>
             </div>
           </div>
-
           <div class="interview-content__item">
             <p class="interview-content__label">山口県の魅力</p>
             <h3 class="interview-content__title">人も街も、<br>あたたかい</h3>
             <div class="interview-content__text">
-              <p>山口県の人は本当に優しいと感じている。お店の方も会社の方も驚くほど親切である。また、出身地である長崎県と比べると坂が少なく、生活しやすい環境だと感じている。本当に良いところだと思う。</p>
+              <p>山口県の人は本当に優しいと感じています。お店の方も会社の方も驚くほど親切です。また、出身地である長崎県と比べると坂が少なく、生活しやすい環境だと感じています。本当に良いところだと思います。</p>
             </div>
           </div>
-
           <div class="interview-content__item">
             <p class="interview-content__label">就活生へのメッセージ</p>
             <h3 class="interview-content__title">知らない世界だからこそ、<br>おもしろい</h3>
             <div class="interview-content__text">
-              <p>建材業界と聞くと難しそうなイメージを持ったり、仕事内容が想像しにくかったりするかもしれない。しかし、知らない分野だからこそ学べることが非常に多い仕事である。</p>
-              <p>また、この仕事ではさまざまな人と関わることができる。家を建てる工務店の方々、商品をつくるメーカーの方々、家具を選ばれる一般のお客様など、多くの人との出会いがある。</p>
-              <p>そのため、自分自身のスキルを磨き、成長する機会も非常に多い。あまり難しく考える必要はないと思う。人も環境も良い会社なので、ぜひ!</p>
+              <p>建材業界と聞くと難しそうなイメージを持ったり、仕事内容が想像しにくかったりするかもしれません。しかし、知らない分野だからこそ学べることが非常に多い仕事です。</p>
+              <p>また、この仕事ではさまざまな人と関わることができます。家を建てる工務店の方々、商品をつくるメーカーの方々、家具を選ばれる一般のお客様など、多くの人との出会いがあります。</p>
+              <p>そのため、自分自身のスキルを磨き、成長する機会も非常に多いです。あまり難しく考える必要はないと思います。人も環境も良い会社なので、ぜひ！</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-
     <section class="interview-schedule">
-
       <div class="section-heading">
         <h2 class="section-heading__title">タイムスケジュール</h2>
-        <div class="section-heading__line">
-          <span class="section-heading__line-gray"></span>
-          <span class="section-heading__line-blue"></span>
-        </div>
+        <div class="section-heading__line"><span class="section-heading__line-gray"></span><span
+            class="section-heading__line-blue"></span></div>
       </div>
-
       <div class="interview-schedule__inner">
-
         <p class="interview-content__label">営業マンの1日</p>
-
         <details class="interview-schedule__item">
           <summary class="interview-schedule__toggle">タイムスケジュールを見る</summary>
-
           <div class="interview-schedule__content">
             <table class="interview-schedule__table">
               <tbody>
@@ -391,12 +272,9 @@
             </table>
           </div>
         </details>
-
         <p class="interview-content__label">経営管理課 課長の普通の1日</p>
-
         <details class="interview-schedule__item">
           <summary class="interview-schedule__toggle">タイムスケジュールを見る</summary>
-
           <div class="interview-schedule__content">
             <table class="interview-schedule__table">
               <tbody>
@@ -428,12 +306,9 @@
             </table>
           </div>
         </details>
-
         <p class="interview-content__label">経営管理課 課長のアクティブな1日</p>
-
         <details class="interview-schedule__item">
           <summary class="interview-schedule__toggle">タイムスケジュールを見る</summary>
-
           <div class="interview-schedule__content">
             <table class="interview-schedule__table">
               <tbody>
@@ -469,66 +344,30 @@
             </table>
           </div>
         </details>
-
       </div>
-
     </section>
-
     <div class="interview__pager-wrap">
-      <nav class="interview__pager">
-        <a href="s_s.html" class="interview__pager-link interview__pager-link--prev">
-          <span class="interview__pager-icon"><img src="assets/img/common/icon-arrow-left.png" alt="" width="88"
-              height="88"></span>
-          <span class="interview__pager-text">S.Sさんのインタビュー</span>
-        </a>
-        <a href="t_h.html" class="interview__pager-link interview__pager-link--next">
-          <span class="interview__pager-text">T.Hさんのインタビュー</span>
-          <span class="interview__pager-icon"><img src="assets/img/common/icon-arrow-right.png" alt="" width="88"
-              height="88"></span>
-        </a>
-      </nav>
+      <nav class="interview__pager"><a href="s_s.html" class="interview__pager-link interview__pager-link--prev"><span
+            class="interview__pager-icon"><img src="assets/img/common/icon-arrow-left.png" alt="" width="88"
+              height="88"></span><span class="interview__pager-text">S.Sさんのインタビュー</span></a><a href="t_h.html"
+          class="interview__pager-link interview__pager-link--next"><span
+            class="interview__pager-text">T.Hさんのインタビュー</span><span class="interview__pager-icon"><img
+              src="assets/img/common/icon-arrow-right.png" alt="" width="88" height="88"></span></a></nav>
     </div>
-
   </div>
-  <!--main end-->
-
+  <!-- main end -->
   <footer class="footer">
-
-    <div class="footer__body">
-
-      <a href="/" class="footer__logo">
-        <img src="assets/img/common/logo.png" alt="株式会社三和">
-      </a>
-
-      <address class="footer__address">
-        株式会社三和　〒754-0075 山口県山口市小郡中央通1丁目15号<br>
-        TEL 083-973-2829　/　FAX 083-973-5321
-      </address>
-
-      <small class="footer__copyright">
-        &copy; 2026 Sanwa Co.,LTD.
-      </small>
-
+    <div class="footer__body"><a href="/" class="footer__logo"><img src="assets/img/common/logo.png" alt="株式会社三和"></a>
+      <address class="footer__address">株式会社三和　〒754-0075 山口県山口市小郡中央通1丁目15号<br>TEL 083-973-2829　/　FAX 083-973-5321
+      </address><small class="footer__copyright">&copy; 2026 Sanwa Co.,LTD.</small>
     </div>
-
-    <a href="#" class="footer__pagetop">
-      <span class="footer__pagetop-text">Page Top</span>
-      <span class="footer__pagetop-arrow"></span>
-    </a>
-
+    <a href="#" class="footer__pagetop"><span class="footer__pagetop-text">Page Top</span><span
+        class="footer__pagetop-arrow"></span></a>
   </footer>
-
-
   <!-- エントリーボタン -->
-  <div class="entry-btn entry-btn--floating">
-    <a class="entry-btn__entry" href="outline.html#entry">
-      <img src="assets/img/top/entry02.png" alt="エントリー">
-    </a>
-    <a class="entry-btn__recruit" href="outline.html">
-      <img src="assets/img/top/recruit.png" alt="募集要項">
-    </a>
-  </div>
-
+  <div class="entry-btn entry-btn--floating"><a class="entry-btn__entry" href="outline.html#entry"><img
+        src="assets/img/top/entry02.png" alt="エントリー"></a><a class="entry-btn__recruit" href="outline.html"><img
+        src="assets/img/top/recruit.png" alt="募集要項"></a></div>
   <!-- slick -->
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- GSAP -->
