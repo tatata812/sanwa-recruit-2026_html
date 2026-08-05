@@ -2228,6 +2228,9 @@
     font-size: 15px;
   }
 }
+.interview-mv__info--tk {
+  right: 10%;
+}
 .interview-mv__name {
   display: flex;
   align-items: baseline;
